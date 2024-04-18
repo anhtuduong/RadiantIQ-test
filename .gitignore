@@ -1,0 +1,19 @@
+# LaTeX related files
+*.aux
+*.log
+*.synctex.gz
+*.pdf
+
+# LaTeX intermediate files
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.out
+
+# LaTeX build directories
+_build/
+
+# Temporary files
+*~
