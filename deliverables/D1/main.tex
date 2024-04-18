@@ -1,0 +1,75 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc} 
+\usepackage{rfi}
+\usepackage{helvet}
+\usepackage{xspace}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\renewcommand{\familydefault}{\sfdefault}
+
+\newcommand\AS[1]{\textcolor{green}{\emph{FK: #1}}}
+
+\newcommand\key[1]{\textbf{#1}}
+\newcommand\opt[1]{[{#1}]}
+\newcommand\nt[1]{<{#1}>}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\workpackageNumber{1}
+\workpackageName{Software Specification}
+\taskNumber{1.1}
+\taskName{Define Software Specification}
+\deliverableNumber{1}
+\deliverableTitle{RadiantIQ Software Specification}
+%Information: deliverableRunningTitle is used for the page footer, so try to write a short title!
+\deliverableRunningTitle{RadiantIQ Software Specification}
+\deliverableResponsible{RadiantIQ}
+\deliverableVersion{1.0}
+\deliverableStatus{Completed}
+\deliverableAuthors{Lorenzo Cattai, Gabriele Pernici, Anh Tu Duong, Lorenzo negut}
+\dueDate{09/04/2024}
+\submissionDate{22/04/2024}
+\deliverableType{DOCUMENT}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+\input{alias}
+
+\begin{document}
+	\input{cover}
+	\input{sections/version}
+	
+	\tableofcontents
+	\newpage
+	
+	\input{acronyms}
+	
+	\newpage
+	\input{sections/introduction}
+	\newpage
+	\input{sections/domain_analysis}
+	\newpage
+	\input{sections/project_objectives}
+	\newpage
+	\input{sections/actors}
+	\newpage
+	\input{sections/functional_requirements}
+	\newpage
+	\input{sections/non-functional_requirements}
+	\newpage
+	\input{sections/usecases}
+	\newpage
+	\input{sections/context_diagram}
+	\newpage
+	\input{sections/component_diagram}
+	\newpage
+	\input{sections/class_diagram}
+	\newpage
+	\input{sections/conclusion}
+		
+	\newpage
+	
+\end{document}
