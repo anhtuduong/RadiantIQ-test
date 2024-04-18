@@ -1,0 +1,79 @@
+\ProvidesPackage{rfi}[2015/06/15]
+
+\usepackage[T1]{fontenc}
+\usepackage{multirow}
+\usepackage{ltablex}
+\usepackage{palatino}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{subcaption}
+\usepackage{floatrow}
+\floatsetup[table]{capposition=top}
+\usepackage[table]{xcolor}
+\usepackage{fancyhdr}
+\usepackage[titles]{tocloft}
+\usepackage{sectsty}
+\usepackage{url}
+\usepackage[pdftex,
+            colorlinks=true,
+            linkcolor=black,
+            citecolor=black,
+            urlcolor=black,
+            breaklinks]{hyperref}
+
+%\definecolor{BurntOrange}{RGB}{255, 106, 0}
+\definecolor{RFIGreen}{RGB}{0, 102, 102}
+\definecolor{gray}{RGB}{216, 216, 216}
+
+\newcommand\cellulegb{\cellcolor{gray}\textcolor{black}}
+\renewcommand{\ttdefault}{cmtt}
+
+\def\arraystretch{1.5}
+
+% Geometry
+\geometry{paper=a4paper,centering,hmargin={2.5cm, 2.5cm}, vmargin={3cm, 3cm}}
+
+% Variable definition
+\def\deliverableNumber#1{\gdef\theDeliverableNumber{#1}}
+\def\deliverableTitle#1{\gdef\theDeliverableTitle{#1}}
+\def\deliverableRunningTitle#1{\gdef\theDeliverableRunningTitle{#1}}
+\def\deliverableResponsible#1{\gdef\theDeliverableResponsible{#1}}
+\def\deliverableVersion#1{\gdef\theDeliverableVersion{#1}}
+\def\deliverableStatus#1{\gdef\theDeliverableStatus{#1}}
+\def\deliverableAuthors#1{\gdef\theDeliverableAuthors{#1}}
+\def\deliverableReviewers#1{\gdef\theDeliverableReviewers{#1}}
+\def\workpackageNumber#1{\gdef\theWorkpackageNumber{#1}}
+\def\workpackageName#1{\gdef\theWorkpackageName{#1}}
+\def\taskNumber#1{\gdef\theTaskNumber{#1}}
+\def\taskName#1{\gdef\theTaskName{#1}}
+\def\dueDate#1{\gdef\theDueDate{#1}}
+\def\submissionDate#1{\gdef\theSubmissionDate{#1}}
+\def\deliverableType#1{\gdef\theDeliverableType{#1}}
+\def\disseminationLevel#1{\gdef\theDisseminationLevel{#1}}
+
+% Headers and footers
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[l]{\includegraphics[height=0.89cm]{images/radiantiq}}
+\fancyhead[r]{\includegraphics[height=0.8cm]{images/unitn}}
+\fancyfoot[l]{\em\color{RFIGreen} (C) RadiantIQ-UniTN}
+\fancyfoot[r]{\em\color{RFIGreen} D\theDeliverableNumber\ - \theDeliverableRunningTitle\ -  Pag. \thepage\ }
+\setlength{\headheight}{32.1pt}
+\setlength{\headsep}{2em}
+\renewcommand{\headrulewidth}{0em}
+\renewcommand{\footrulewidth}{0em}
+\renewcommand{\headrule}{{\color{RFIGreen}%
+\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}}
+\renewcommand{\footrule}{{\color{RFIGreen}%
+\vskip-\footruleskip\vskip-\footrulewidth
+\hrule width\headwidth height\footrulewidth\vskip\footruleskip}}
+
+% Section style
+\allsectionsfont{\color{RFIGreen}}
+
+% Dots in table of contents
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+% Add space between paragraphs
+%\setlength{\parskip}{\baselineskip}%
