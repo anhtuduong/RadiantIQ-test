@@ -1,2 +1,69 @@
 \section{Non-functional Requirements} \label{non-functional-requirements}
+We analyzed non-functional requirements in eight categories: Performance (how fast does the platform respond), Scalability (how many elements should be supported by the infrastructure), Portability (which systems and devices does the platform run on), Reliability (when could problems arise), Maintainability (how long does it take to fix arisen problems), Availability (when, where and in which circumstances should the platform or its contents be available), Security (\textit{TODO}) and Usability (everything concerning user experience). \\
+On the time considerations we assumed the following: 0.1 seconds is the time limit for seemingly instantaneous response; with, at most, a 1 second response time the user will notice the delay, but the flow of thought won’t be interrupted; after 10 seconds the user's attention is completely lost. However, for AI generation more time could be needed, especially for complex prompts. \\
+The maximum concurrent visits estimate (and other numerical data in the Scalability category) was reached after making some estimations/research on UniTn data. So the aim is to possibly allow an entire university's student pool to be active concurrently.\\
+
+\begin{enumerate}
+	\item \textbf{Performance}: 
+	\begin{itemize}
+		\item The application response time should be always under 5 seconds.
+		\item Loading time for classes/courses should be under 5 seconds.
+		\item Loading time for lectures should be under 3-4 seconds.
+		\item Loading time for mini-games should be at most 5 seconds.
+		\item Every mini-game should always run at, at least, 30 FPS.
+		\item Loading time for AI theming generation should be at most 2 minutes.
+	\end{itemize}
+	
+	\item \textbf{Scalability}: 
+	\begin{itemize}
+		\item The platform supports at most 20000 concurrent visits.
+		\item The platform should support around 1000 courses/classes.
+		\item The platform should support around 100000 registered users.
+		\item The platform will use \textit{TODO total material storage} of stored data, with an average of \textit{TODO single course storage} for each course and an average of \textit{TODO single user storage} for each user.
+	\end{itemize}
+	
+	\item \textbf{Portability}: 
+	\begin{itemize}
+		\item The platform should run on every main smoothly browser (Chrome, Safari, Firefox, Edge, Opera).
+		\item The platform should be available in app form on both android and IOS.
+		\item Maintain consistent user experience among different screen sizes.
+	\end{itemize}
+	
+	\item \textbf{Reliability}: 
+	\begin{itemize}
+		\item Platform should experience bugs or failures only right after the release of a new unstable version.
+		\item LLM for AI theming will rely entirely on external implementation so it could lead to fatal errors in that regard (if AI regulations change, if the external API are offline, ...).
+	\end{itemize}
+	
+	\item \textbf{Maintainability}: 
+	\begin{itemize}
+		\item Errors or bugs regarding new unstable versions should be solved within three days after discovery.
+		\item Unstable versions should be marked as stable within 3 weeks after release.
+		\item LLM external implementation should be replaced, if possible, within one month of service's absence.
+	\end{itemize}
+	
+	\item \textbf{Availability}: 
+	\begin{itemize}
+		\item The platform should be available in every country with internet access and academic freedom.
+		\item The platform should be available at any time except for maintenance periods that will be announced at least two weeks in advance and should last no longer than a day.
+		\item Majority of the material should be available also offline (within the application mode).
+	\end{itemize}
+	
+	\item \textbf{Security}: 
+	\begin{itemize}
+		\item
+	\end{itemize}
+	
+	\item \textbf{Usability}: 
+	\begin{itemize}
+		\item User interface should be easy to use and appealing to the eye.
+		\item Mini-games should have intuitive designs and/or detailed instructions.
+		\item Material research should be easy and intuitive.
+		\item Class enrollment should be intuitive.
+		\item Material reviews should be easy to find and post.
+		\item Support chat should be immediate to reach.
+		\item Platform should allow for a colorblind mode.			
+		\item Localization in various languages (English, Italian, German, Spanish, Chinese, Portuguese, French, Japanese, Korean).
+	\end{itemize}
+\end{enumerate}
 
