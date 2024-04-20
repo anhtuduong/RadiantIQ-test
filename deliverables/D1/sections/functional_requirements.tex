@@ -1,2 +1,201 @@
 \section{Functional Requirements} \label{functional-requirements}
 
+\subsection{User stories}
+
+\begin{enumerate}
+	\item As a \textit{Registered User} \\
+	I want to \textit{login} \\
+	To \textit{access my personal profile}
+	\item As a \textit{Registered User} \\
+	I want to \textit{terminate my account} \\
+	To \textit{remove myself from the platform}
+	\item As a \textit{Registered User} \\
+	I want to \textit{change my username, password and settings} \\
+	To \textit{customize the profile}
+	\item As a \textit{Registered User} \\
+	I want to \textit{access the support chat} \\
+	To \textit{interact with tech support}
+	\item As a \textit{Registered User} \\
+	I want to \textit{review the courses} \\
+	To \textit{leave my opinion of the course}
+	
+	\item As a \textit{Unregistered User} \\
+	I want to \textit{use the platform anonymously} \\
+	To \textit{try out the platform without committing to it}
+	\item As a \textit{Unregistered User} \\
+	I want to \textit{register} \\
+	To \textit{receive an actual role in the platform and access its benefits}
+	
+	\item As a \textit{Student} \\
+	I want to \textit{enter a custom class created by a professor} \\
+	To \textit{be able to partake in the lectures of my teacher/professor}
+	\item As a \textit{Student} \\
+	I want to \textit{look through the library and choose my own preferred subjects} \\
+	To \textit{be able to learn what I care about}
+	\item As a \textit{Student} \\
+	I want to \textit{customize the AI generated theming} \\
+	To \textit{immerse myself more into the learning process}
+	\item As a \textit{Student} \\
+	I want to \textit{access my statistics, progresses and ranking} \\
+	To \textit{keep track of how I am doing}
+	\item As a \textit{Student} \\
+	I want to \textit{access the courses and relative activities} \\
+	To \textit{actually learn}
+	\item As a \textit{Student} \\
+	I want to \textit{see other member of my custom classes} \\
+	To \textit{make sure I joined the right custom class and to know who my peers are}
+	
+	\item As a \textit{Professor} \\
+	I want to \textit{create a class from a course} \\
+	To \textit{give my students an interactive course under my supervision}
+	\item As a \textit{Professor} \\
+	I want to \textit{add students to my classes} \\
+	To \textit{have my students follow the path I prepared}
+	\item As a \textit{Professor} \\
+	I want to \textit{see the list of students of my custom classes} \\
+	To \textit{make sure my students joined my class}
+	\item As a \textit{Professor} \\
+	I want to \textit{see the statistics and progresses of students of my custom classes} \\
+	To \textit{see how they are performing}
+	
+	\item As a \textit{Publisher} \\
+	I want to \textit{publish articles, create and modify courses} \\
+	To \textit{add knowledge to the platform}
+	\item As a \textit{Publisher} \\
+	I want to \textit{change the visibility of courses I created} \\
+	To \textit{decide to keep the course private or make it available for everyone}
+	\item As a \textit{Publisher} \\
+	I want to \textit{contact developers to add minigames to my courses} \\
+	To \textit{make the experience funnier for the students}
+	\item As a \textit{Publisher} \\
+	I want to \textit{use a payment system to compensate the developers for their work} \\
+	To \textit{complete the transaction directly on the platform}
+	
+	\item As a \textit{Course Supervisor} \\
+	I want to \textit{check and change the courses and their contents} \\
+	To \textit{ensure a high quality level and fix possible errors}
+	\item As a \textit{Course Supervisor} \\
+	I want to \textit{give proof of my qualification} \\
+	To \textit{obtain the right to be a supervisor}
+	
+	\item As a \textit{AI Supervisor} \\
+	I want to \textit{be able to change the parameters and supervise the generation of content the AI model} \\
+	To \textit{make the user experience better and the generated content more accurate}
+	
+	\item As a \textit{Developer} \\
+	I want to \textit{develop minigames on request} \\
+	To \textit{help publishers create better courses}
+	\item As a \textit{Developer} \\
+	I want to \textit{register on payment systems} \\
+	To \textit{receive the money I earn}
+	
+	\item As a \textit{System Admin} \\
+	I want to \textit{get debug information about the platform} \\
+	To \textit{make sure everything is running properly}
+	\item As a \textit{System Admin} \\
+	I want to \textit{interact directly with the backend instance} \\
+	To \textit{fix any kind of problems that may emerge}
+	
+	\item As a \textit{Tech support} \\
+	I want to \textit{respond to the messages on the support chat} \\
+	To \textit{understand the problems of the users}
+	\item As a \textit{Tech support} \\
+	I want to \textit{have more access to the system} \\
+	To \textit{fix reported user problems}
+\end{enumerate}
+
+\subsection{Functional requirements}
+\hfill\textbf{Functional requirements from the Registered Users point of view}
+\begin{enumerate}[start=1,label={\bfseries FR \arabic*.}]
+	\item Registered Users should be able to login using
+	\item Registered Users should be able to terminate their account and have it completely removed from existence
+	\item Registered Users should be able to change their username, password and settings (both core and secondary)
+	\item Registered Users should be able to open chats with tech support
+	\item Registered Users should be able to rate the courses according to specific parameters
+\end{enumerate}
+
+\textbf{Functional requirements from the Unregistered Users point of view}
+\begin{enumerate}[start=6,label={\bfseries FR \arabic*.}]
+	\item Unregistered Users should be able to use the platform anonymously
+	\item Unregistered Users should be able to register
+\end{enumerate}
+
+\textbf{Functional requirements from the Students point of view}
+\begin{enumerate}[start=8,label={\bfseries FR \arabic*.}]
+	\item Students should be able to enter a custom class (created by a professor)
+	\item Students should be able to look through the library of courses and favorite them at will
+	\item Students should be able to customize the AI generated theming by setting a basic text prompt that will get passed to the AI model when generating the wrapping for the course
+	\item Students should be able to access their statistics and progress on every course
+	\item Students should be able to access the course and relative activities
+	\item Students should be able to see who is enrolled in a class
+\end{enumerate}
+
+\textbf{Functional requirements from the Professors point of view}
+\begin{enumerate}[start=14,label={\bfseries FR \arabic*.}]
+	\item Professors should be able to create classes where users can join to get monitored by the professor
+	\item Professors should be able to add students to their classes by inviting them
+	\item Professors should be able to see the list of students of my custom classes
+	\item Professors should be able to see the statistics and progresses of students of my custom classes
+\end{enumerate}
+
+\textbf{Functional requirements from the Publishers point of view}
+\begin{enumerate}[start=18,label={\bfseries FR \arabic*.}]
+	\item Publishers should be able to publish articles, create, and modify courses
+	\item Publishers should have the ability to change the visibility of courses they created, deciding whether to keep them private or make them public
+	\item Publishers should be able to hire developers to add minigames to their courses through an internal development chat
+	\item Publishers should be able to utilize a payment system to compensate developers for their work, completing transactions directly on the platform
+\end{enumerate}
+
+\textbf{Functional requirements from the Course Supervisors point of view}
+\begin{enumerate}[start=22,label={\bfseries FR \arabic*.}]
+	\item Course Supervisors should be able to review and modify courses
+	\item Course Supervisors must provide proof of their qualifications
+\end{enumerate}
+
+\textbf{Functional requirements from the AI Supervisors point of view}
+\begin{enumerate}[start=24,label={\bfseries FR \arabic*.}]
+	\item AI Supervisors should be able to adjust parameters and oversee the generation of content by the AI model, specifically focusing on improving the wrapping of the core lectures and exercises
+\end{enumerate}
+
+\textbf{Functional requirements from the Developers point of view}
+\begin{enumerate}[start=25,label={\bfseries FR \arabic*.}]
+	\item Developers should be able to develop minigames upon request to assist publishers in creating better courses
+	\item Developers should be able to access development chat to communicate with publishers
+\end{enumerate}
+
+\textbf{Functional requirements from the System Admins point of view}
+\begin{enumerate}[start=27,label={\bfseries FR \arabic*.}]
+	\item System Admins should be able to get debug information about the current state of the platform
+	\item System Admins should be able to directly interact with the backend instance to debug it
+\end{enumerate}
+
+\textbf{Functional requirements from the Tech Support point of view}
+\begin{enumerate}[start=29,label={\bfseries FR \arabic*.}]
+	\item Tech Support should be able to respond to support chats from users
+	\item Tech Support should have access to the majority of functionalities of the system
+\end{enumerate}
+
+\textbf{Functional requirements from the System point of view}
+\begin{enumerate}[start=31,label={\bfseries FR \arabic*.}]
+	\item The application must provide a registration and authentication procedure
+	\item The application must provide an account deletion system
+	\item The application must allow users to modify their accounts informations and settings
+	\item The application must provide an internal communication system to provide technical support
+	\item The application must categorize each registered user with one or more roles
+	\item The application must allow the creation and modification of courses (both private and public), as a group of articles, minigames and exercises
+	\item The application must provide an internal communication system, to allow publishers to hire developers to create minigames for their courses
+	\item The application must provide a payment system to allow the publishers to pay the developers for their work
+	\item The application must incorporate a generative AI model in order to generate articles and/or context for the exercises
+	\item The application must provide a support service to check the quality of the material published
+	\item The application must allow the creation of private instances of courses (called classes) with customizable access limitations
+	\item The application must allow the dynamic addition or removal of students from classes
+	\item The application must keep an accessible record of the participants of each class
+	\item The application must allow students to partake in classes or single courses
+	\item The application must showcase a list of available classes and courses
+	\item The application must keep track of registered user’s results for each course they take part in and keep a global ranking of them
+	\item The application must allow the users to locally access part of the content
+	\item The application must provide a verification system for the Course Supervisor’s qualifications
+	\item The application must provide a grading system for the courses
+\end{enumerate}
+
+
