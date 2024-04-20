@@ -8,7 +8,7 @@ bibtex ?= bibtex
 mv ?= mv
 
 sources=${MAIN}.tex ${MAIN}.bib \
-	$(wildcard section/*.tex)   \
+	$(wildcard sections/*.tex)   \
 	$(wildcard images/*)   \
 	${COMMON}/rfi.sty ${COMMON}/alias.tex  \
 	$(wildcard ${COMMON}/images/*)
