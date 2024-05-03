@@ -1,0 +1,73 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc} 
+\usepackage{rfi}
+\usepackage{helvet}
+\usepackage{xspace}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+\renewcommand{\familydefault}{\sfdefault}
+
+\newcommand\AS[1]{\textcolor{green}{\emph{FK: #1}}}
+
+\newcommand\key[1]{\textbf{#1}}
+\newcommand\opt[1]{[{#1}]}
+\newcommand\nt[1]{<{#1}>}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\workpackageNumber{1}
+\workpackageName{Software Specification}
+\taskNumber{2.1}
+\taskName{Define Agile Methodology}
+\deliverableNumber{2}
+\deliverableTitle{RadiantIQ Agile Methodology}
+%Information: deliverableRunningTitle is used for the page footer, so try to write a short title!
+\deliverableRunningTitle{RadiantIQ Agile Methodology}
+\deliverableResponsible{RadiantIQ develop team}
+\deliverableVersion{2.0}
+\deliverableStatus{Completed}
+\deliverableAuthors{Lorenzo Cattai, Gabriele Pernici, Anh Tu Duong, Lorenzo Negut}
+\dueDate{27/05/2024}
+\submissionDate{27/05/2024}
+\deliverableType{DOCUMENT}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+\input{alias}
+
+\begin{document}
+	\input{cover}
+	\input{sections/version}
+	
+	\tableofcontents
+	\newpage
+	
+	\input{acronyms}
+	
+	\newpage
+	\input{sections/introduction}
+	\newpage
+	\input{sections/architecture_description}
+	\newpage
+	\input{sections/product_backlog}
+	\newpage
+	\input{sections/definition_of_tests}
+	\newpage
+	\input{sections/git_strategy}
+	\newpage
+	\input{sections/definition_of_done}
+	\newpage
+	\input{sections/how_to_demo}
+	\newpage
+	\input{sections/sprint_1}
+	\newpage
+	\input{sections/conclusion}
+		
+	\newpage
+	
+\end{document}
