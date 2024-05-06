@@ -40,7 +40,7 @@
 		
 	\subsection{Testing Types}
 		
-		\subsubsection{Functional Testing}
+		\subsubsection{Functional Testing (Black-box Testing)}
 		
 		Functional testing ensures that each function of RadianIQ works as expected. This involves testing individual features and functionalities to verify that they meet the specified requirements, including:
 		
@@ -50,6 +50,17 @@
 			\item User Registration and Authentication: Testing the registration process for all the user roles, as well as the login and authentication mechanisms to ensure secure access to the platform.
 			\item Content Delivery: Testing the delivery of course content, including multimedia materials, documents, mini games, and lectures, to ensure they are accessible and functional.
 			\item Communication Features: Testing messaging systems, discussion forums, and collaboration tools to ensure smooth communication and interaction between users.
+		\end{itemize}
+
+		\subsubsection{Structural Testing (White-box Testing)}
+
+		Structural testing, or white-box testing, involves examining the internal structure and code of the e-learning web application to validate its logic, algorithms, and internal pathways. This testing type ensures the reliability, security, and maintainability of the application's underlying codebase. Key aspects to test include:
+
+		\begin{itemize}
+			\item Code Coverage: Verify that all code paths, including branches, loops, and conditionals, are executed and tested to achieve high code coverage.
+			\item Data Validation: Validate input data to prevent security vulnerabilities such as SQL injection, cross-site scripting (XSS), and data manipulation attacks.
+			\item Error Handling: Ensure robust error handling mechanisms are in place to gracefully handle exceptions, invalid inputs, and unexpected scenarios without crashing the application.
+			\item Performance Optimization: Analyze code performance to identify and optimize inefficient algorithms, database queries, and resource-intensive operations for improved scalability and responsiveness.
 		\end{itemize}
 		
 		\subsubsection{Usability Testing}
@@ -85,16 +96,7 @@
 			\item Penetration Testing: Simulating real-world attacks to exploit vulnerabilities and assess the effectiveness of security controls and countermeasures.
 			\item Data Protection Testing: Ensuring that sensitive user data such as personal information, grades, and assessment results are securely stored, transmitted, and accessed according to privacy regulations and best practices.
 		\end{itemize}
-		
-		\subsubsection{Integration Testing}
-		
-		Integration testing ensures seamless interaction between different components and modules of the platform. This involves testing the interfaces and interactions between modules to verify data flow, functionality, and communication protocols. It includes:
-		
-		\begin{itemize}
-			\item Module Integration Testing: Testing the integration between individual modules or components to ensure they work together as expected.
-			\item API Testing: Testing the application programming interfaces (APIs) used for communication between different modules to ensure they adhere to specifications and handle data exchange securely.
-			\item Data Integration Testing: Testing the integration of databases and data sources to ensure data consistency, integrity, and accuracy across the platform.
-		\end{itemize}
+
 		
 	\subsection{Testing Approach}
 
