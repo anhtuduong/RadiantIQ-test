@@ -1,0 +1,9 @@
+version: '3'
+services:
+  template-and-test-microservices:
+    image: radiantiq-template-and-test-microservices
+    container_name: radiantiq-template-and-test-microservices
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    
