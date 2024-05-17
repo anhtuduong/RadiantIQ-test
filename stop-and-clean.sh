@@ -1,4 +1,3 @@
-!/bin/bash
 # ------------------------------------------------------------------------------
 # Description: This script stops the containers and removes the images.
 # ------------------------------------------------------------------------------
@@ -11,4 +10,4 @@ template_and_test_microservices_dir="${root_dir}/backend/template-and-test-micro
 docker compose down
 
 # Remove the images
-./{template_and_test_microservices_dir}/clean.sh
+${template_and_test_microservices_dir}/clean.sh

@@ -1,4 +1,3 @@
-!/bin/bash
 # ------------------------------------------------------------------------------
 # Description: This script builds the images of services
 # and fires up the containers.
