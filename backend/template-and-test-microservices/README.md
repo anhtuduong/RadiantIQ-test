@@ -116,7 +116,7 @@ This service is one of many microservices running in RadiantIQ root. Register th
 
 To stop and clean:
 ```
-./clean.sh
+./stop-and-clean.sh
 ```
 
 ---
