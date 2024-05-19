@@ -1,9 +1,9 @@
 {
   "name": "account-service",
   "version": "1.0.0",
-  "description": "This directory contains a template to test microservices for RadiantIQ. It provides a starting point and workflow for building microservices-based applications.",
   "main": "index.js",
   "directories": {
+    "lib": "src",
     "doc": "docs",
     "test": "tests"
   },
