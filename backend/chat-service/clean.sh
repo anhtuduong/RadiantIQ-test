@@ -4,4 +4,4 @@
 # ------------------------------------------------------------------------------
 
 # Remove the images
-docker rmi radiantiq-account-service
+docker rmi radiantiq-chat-service

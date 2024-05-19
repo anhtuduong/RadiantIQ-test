@@ -1,7 +1,7 @@
 # ------------------------------------------------------------------------------
-# Description: This script removes the image of the
-# chat service.
+# Description: This script builds the image of the
+# chat-service.
 # ------------------------------------------------------------------------------
 
-# Remove the images
-docker rmi radiantiq-account-service
+# Build the image
+docker build -t radiantiq-chat-service .

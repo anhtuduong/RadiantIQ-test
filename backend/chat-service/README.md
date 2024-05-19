@@ -1,11 +1,11 @@
-# Account service
+# Chat service
 
-This directory is about RadiantIQ's `account service`. It provides the starting point and workflow for building microservices-based application.
+This directory is about RadiantIQ's `chat service`. It provides the starting point and workflow for building microservices-based application.
 
 ## Directory structure
 
 ```
-account-service/
+chat-service/
 ├── .github/            # GitHub Actions workflows
 │   └── workflows/      # CI/CD configuration files
 │       └── ci.yml      # Example: CI workflow
@@ -91,7 +91,7 @@ This service can run independently by this command in this service directory:
 ```
 docker compose up -d
 ```
-Go to http://localhost:3001/ to check the status! (The port specified in docker-compose.yml)
+Go to http://localhost:3002/ to check the status! (The port specified in docker-compose.yml)
 
 To stop the service:
 ```
