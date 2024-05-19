@@ -6,7 +6,7 @@ app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
 
-const message = '<center><iframe src="https://giphy.com/embed/9waIKqGT9i3RnBACLD" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p>class-service STARTED SUCCESSFULLY!</p></center>';
+const message = '<center><iframe src="https://giphy.com/embed/1eCh4c3XMuFhoyQ6KL" width="480" height="269" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p>class-service STARTED SUCCESSFULLY!</p></center>';
 
 app.get('/', (req, res) => {
     res.send(message)
