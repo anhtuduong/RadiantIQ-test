@@ -1,5 +1,6 @@
 version: '3'
 services:
+
   radiantiq-template-and-test-microservices:
     image: radiantiq-template-and-test-microservices
     container_name: radiantiq-template-and-test-microservices
@@ -7,3 +8,58 @@ services:
     ports:
       - "3000:3000"
     
+  radiantiq-account-service:
+    image: radiantiq-account-service
+    container_name: radiantiq-account-service
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+
+  radiantiq-chat-service:
+    image: radiantiq-chat-service
+    container_name: radiantiq-chat-service
+    restart: unless-stopped
+    ports:
+      - "3002:3002"
+
+  radiantiq-class-service:
+    image: radiantiq-class-service
+    container_name: radiantiq-class-service
+    restart: unless-stopped
+    ports:
+      - "3003:3003"
+
+  radiantiq-course-service:
+    image: radiantiq-course-service
+    container_name: radiantiq-course-service
+    restart: unless-stopped
+    ports:
+      - "3004:3004"
+
+  radiantiq-library-service:
+    image: radiantiq-library-service
+    container_name: radiantiq-library-service
+    restart: unless-stopped
+    ports:
+      - "3005:3005"
+
+  radiantiq-minigame-service:
+    image: radiantiq-minigame-service
+    container_name: radiantiq-minigame-service
+    restart: unless-stopped
+    ports:
+      - "3006:3006"
+
+  radiantiq-payment-service:
+    image: radiantiq-payment-service
+    container_name: radiantiq-payment-service
+    restart: unless-stopped
+    ports:
+      - "3007:3007"
+
+  radiantiq-ranking-service:
+    image: radiantiq-ranking-service
+    container_name: radiantiq-ranking-service
+    restart: unless-stopped
+    ports:
+      - "3008:3008"
