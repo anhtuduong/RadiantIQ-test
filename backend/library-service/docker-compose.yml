@@ -1,0 +1,9 @@
+version: '3'
+services:
+  radiantiq-library-service:
+    image: radiantiq-library-service
+    container_name: radiantiq-library-service
+    restart: unless-stopped
+    ports:
+      - "3005:3005"
+    
