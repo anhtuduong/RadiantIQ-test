@@ -1,11 +1,11 @@
-# Template and test Microservices
+# Account service
 
-This directory contains a template to test microservices for RadiantIQ. It provides a starting point and workflow for building microservices-based applications.
+This directory is about RadiantIQ's `account service`. It provides the starting point and workflow for building microservices-based application.
 
 ## Directory structure
 
 ```
-template-and-test-microservices/  # service template
+account-service/  # service template
 ├── .github/            # GitHub Actions workflows
 │   └── workflows/      # CI/CD configuration files
 │       └── ci.yml      # Example: CI workflow
@@ -34,12 +34,8 @@ template-and-test-microservices/  # service template
 ### Install dependencies
 
 1. Install `nodejs`: https://nodejs.org/en/download/package-manager/
-2. Start a service with `Express.js` (in case of empty service):
-```
-npm init -y
-npm install express
-```
-3. Check if `Express.js` is installed by investigating `package.json`:
+
+2. Check if `Express.js` is installed by investigating `package.json`:
 ```json
 "dependencies": {
     "express": "^4.19.2"
@@ -95,7 +91,7 @@ This service can run independently by this command in this service directory:
 ```
 docker compose up -d
 ```
-Go to http://localhost:3000/ to check the status! (The port specified in docker-compose.yml)
+Go to http://localhost:3001/ to check the status! (The port specified in docker-compose.yml)
 
 To stop the service:
 ```
