@@ -8,18 +8,7 @@
 
 		\subsubsection{Scope}
 
-		This document outlines the testing strategy for RadianIQ, detailing the objectives, testing types, approach, test cases, test environment, test execution process, risks, and mitigation strategies. It serves as a guideline for the testing team, developers, and stakeholders involved in the development and quality assurance of the application.
-
-		\subsubsection{Audience}
-		
-		The intended audience includes:
-		
-		\begin{itemize}
-			\item Development team: To understand the testing requirements and incorporate them into the development process.
-			\item Quality assurance team: To execute the testing procedures outlined in this document and ensure the quality of the application.
-			\item Project stakeholders: To gain insights into the testing strategy and its implications on the overall project timeline.
-		\end{itemize}
-		
+		This document outlines the testing strategy for RadianIQ, detailing the objectives, testing types, approach, test cases, test environment, test execution process, risks, and mitigation strategies. It serves as a guideline for the testing team, developers, and stakeholders involved in the development and quality assurance of the application. RadiantIQ test development will be based on the outlined below and encourage to use mixed testing methods to ensure the quality of the platform.
 		
 		
 	\subsection{Testing Objectives}
@@ -30,7 +19,7 @@
 		
 		\begin{itemize}
 			\item Verify the functionality of all features: Ensure that each function of the web application, including course and class management, user registration, content delivery, and communication features, works as intended without any errors or unexpected behavior.
-			\item Assess usability and accessibility: Evaluate the user-friendliness and accessibility of the platform to ensure that users can navigate the application easily and perform their tasks efficiently.
+			\item Usability and accessibility: Evaluate the user-friendliness and accessibility of the platform to ensure that users can navigate the application easily and perform their tasks efficiently.
 			\item Ensure compatibility across different environments: Confirm that RadianIQ is compatible with various browsers (e.g., Chrome, Firefox, Safari), devices (e.g., desktops, laptops, tablets, smartphones), and operating systems (e.g., Windows, macOS, iOS, Android).
 			\item Evaluate performance: Test the responsiveness and scalability of the application to ensure that it can handle multiple users accessing the platform simultaneously and perform well under high peak.
 			\item Identify and mitigate security vulnerabilities: Conduct thorough security testing to identify potential vulnerabilities, such as data breaches, unauthorized access, and injection attacks, and implement measures to mitigate these risks and protect user data.
@@ -98,7 +87,7 @@
 		\end{itemize}
 
 		
-	\subsection{Testing Approach}
+	\subsection{Testing Method Approach}
 
 		\subsubsection{V-Model Testing}
 
@@ -155,33 +144,6 @@
 			\item Version Control Integration: Integrating regression tests with version control systems to track changes and ensure test coverage across different software versions.
 		\end{itemize}
 		
-		\subsubsection{Exploratory Testing}
-		
-		Exploratory testing is a hands-on approach to testing that emphasizes learning, discovery, and experimentation. Testers explore the application with minimal predefined scripts, allowing them to uncover unforeseen issues and gain insights into the user experience. The exploratory testing process includes:
-		
-		\begin{itemize}
-			\item Session-Based Testing: Setting specific time-boxed sessions to focus on exploring different areas of the application.
-			\item Bug Reporting: Documenting any issues encountered during exploratory testing, including steps to reproduce and screenshots.
-			\item Collaborative Testing: Encouraging collaboration between testers to share insights, findings, and test ideas during exploratory sessions.
-			\item Feedback Loop: Providing feedback to developers and stakeholders based on the discoveries made during exploratory testing to drive improvements in the application.
-		\end{itemize}
-		
-		\subsubsection{User Acceptance Testing (UAT)}
-		
-		UAT involves validating the platform against user requirements and expectations. It ensures that the application meets the needs of end-users and aligns with business objectives. The UAT process includes:
-		
-		\begin{itemize}
-			\item Test Planning: Collaborating with stakeholders to define UAT scope, objectives, and acceptance criteria.
-			\item Test Case Preparation: Developing UAT test cases based on user stories, use cases, and business requirements.
-			\item End-User Involvement: Engaging end-users, including students, professors, and administrators, to participate in UAT activities and provide feedback.
-			\item Feedback Collection: Gathering feedback from end-users regarding usability, functionality, and overall satisfaction with the application.
-			\item Bug Triaging: Prioritizing and addressing issues identified during UAT, collaborate with development teams to implement necessary changes.
-		\end{itemize}
-		
-		
-	\subsection{Test Cases}
-
-	To be defined at every sprint.
 	
 	\subsection{Test Environment}
 	
@@ -190,7 +152,7 @@
 		The test environment setup for RadianIQ should include hardware specifications that closely resemble the production environment to ensure accurate testing results. The hardware specifications may include:
 		
 		\begin{itemize}
-			\item Server Configuration: Specifications for the server hosting the web application, including CPU, RAM, and storage capacity.
+			\item Server Configuration: Specifications for Render.com, server hosting the web application, including CPU, RAM, and storage capacity.
 			\item Client Devices: Specifications for client devices used to access the application, such as desktop computers, laptops, tablets, and smartphones.
 			\item Networking Equipment: Details of networking hardware such as routers, switches, and firewalls that may impact network performance and connectivity.
 		\end{itemize}
@@ -208,7 +170,7 @@
 		
 		\subsubsection{Network Configurations}
 		
-		Network configurations play a crucial role in testing the performance and reliability. The test environment should simulate real-world network conditions to evaluate the application's behavior under different scenarios. This includes:
+		Network configurations play an important role in testing the performance and reliability. The test environment should simulate real-world network conditions to evaluate the application's behavior under different scenarios. This includes:
 		
 		\begin{itemize}
 			\item Internet Connectivity: Ensure stable internet connectivity with sufficient bandwidth to support concurrent user interactions.
@@ -227,30 +189,15 @@
 			\item Test Data Generation: Use data generation tools or scripts to create large volumes of test data to simulate realistic user interactions, such as enrollment in courses, participation in discussions, and submission of assignments.
 		\end{itemize}
 		
-		
-	\subsection{Test Execution}
+	\subsection{Bug Reporting and Tracking}
 	
-		\subsubsection{Test Scheduling}
-		
-		Test scheduling involves planning and organizing the execution of test cases to ensure efficient use of resources and timely validation of RadianIQ. The test scheduling process includes:
-		
-		\begin{itemize}
-			\item Test Planning: Develop a comprehensive test plan that outlines the testing scope, objectives, test cases, and timelines.
-			\item Test Prioritization: Prioritize test cases based on their criticality, impact on the application, and dependencies to focus testing efforts on high-risk areas and critical functionalities.
-			\item Test Coverage: Ensure adequate test coverage by scheduling tests to validate all aspects of the application, including core functionalities, user interactions, and edge cases.
-			\item Test Execution Schedule: Define a schedule for executing test cases, considering factors such as team availability, testing environment availability, and project milestones.
-			\item Iterative Testing: Plan for iterative testing cycles to incorporate feedback, address defects, and validate fixes throughout the software development lifecycle.
-		\end{itemize}
-		
-		\subsubsection{Bug Reporting and Tracking}
-		
-		Bug reporting and tracking are essential aspects of the test execution process, enabling testers to document and manage issues effectively. The bug reporting and tracking process includes:
-		
-		\begin{itemize}
-			\item Defect Identification: Identify and document defects discovered during test execution, including detailed descriptions, steps to reproduce, and screenshots or logs.
-			\item Defect Prioritization: Prioritize defects based on severity, impact on functionality, and business priority to focus on resolving critical issues first.
-			\item Defect Management: Assign, track, and manage defects using a centralized defect tracking system or bug management tool to ensure transparency, accountability, and traceability throughout the defect lifecycle.
-			\item Defect Resolution: Collaborate with development teams to investigate, triage, and resolve reported defects promptly, following established workflows and communication channels.
-		\end{itemize}
+	Bug reporting and tracking are essential aspects of the test execution process, enabling testers to document and manage issues effectively. The bug reporting and tracking process includes:
+	
+	\begin{itemize}
+		\item Defect Identification: Identify and document defects discovered during test execution, including detailed descriptions, steps to reproduce, and screenshots or logs.
+		\item Defect Prioritization: Prioritize defects based on severity, impact on functionality, and business priority to focus on resolving critical issues first.
+		\item Defect Management: Assign, track, and manage defects using a centralized defect tracking system or bug management tool to ensure transparency, accountability, and traceability throughout the defect lifecycle.
+		\item Defect Resolution: Collaborate with development teams to investigate, triage, and resolve reported defects promptly, following established workflows and communication channels.
+	\end{itemize}
 
 		
