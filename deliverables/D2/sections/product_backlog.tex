@@ -1,2 +1,972 @@
 \section{Product backlog} \label{product_backlog}
+Priority's (prio) value is decreasing, so the more important jobs have the lowest priority.
 
+Estimation (est) is a numeric value attributed to the time estimation for the job completion. It's Higher value is 12, while the lowest is 0.
+
+
+\newpage
+\subsection{First definition of backlog item}
+\begin{tabular}{|c|m{1.5cm}|m{4cm}|m{4cm}|c|c|}
+	\hline
+	\textbf{Id}&\textbf{Name}&\textbf{User story}&\textbf{How to Demo}&\textbf{Prio}&\textbf{Est}\\
+	\hline
+	1 & Login & 
+	%user story
+	As a registered user I want to log into the platform so that I can access my roles privileges & 
+	%How to demo
+	Given that I'm at the home page, when I press on the login button and fill in my correct credentials I should get logged in &
+	1 & 8 \\
+	\hline
+	2 & Logout & 
+	%user story
+	As a registered user I want to log out of the platform to prevent anyone to use my roles' privileges without my supervision & 
+	%How to demo
+	Given that I'm logged in, when I press on the logout button I should immediately be logged out and redirected to the home page &
+	1 & 5 \\
+	\hline
+	3 & Credential recovery & 
+	%user story
+	As a registered user I want to be able to recover my credentials if I lose or forget them, in order to avoid losing my account over a single problem & 
+	%How to demo
+	Given that I'm trying to log in, I should be able to press the recovery button (near the credentials insertion boxes) and receive new credentials on the previously decided recovery channel &
+	3 & 8 \\
+	\hline
+	4 & Register Account & 
+	%user story
+	As an unregistered user I want to register to the platform to keep track of my progresses and receive one or more roles & 
+	%How to demo
+	Given that I'm at the home page, when I press on the register button and fill in all the required credentials and info, my account should be created (with the required roles) and I should be automatically logged in &
+	1 & 8 \\
+	\hline
+	5 & Delete account & 
+	%user story
+	As a registered user I want to be able to delete my account to delete my info from the platform & 
+	%How to demo
+	Given that I'm logged in, when I push the delete account button (in the options page) and confirm my choice (by filling in my password and pushing the according button), my account will be deleted along with all the related data &
+	1 & 4 \\
+	\hline
+	6 & Modify core settings & 
+	%user story
+	As a registered user I want to be able to modify my core settings (username, password, recovery channel and personal info) in order to be able to change my mind after registration & 
+	%How to demo
+	Given that I'm in the core option page, when I push the modify button I'll able to refill each field in the core option list and, after pushing the save button, the changes will be saved &
+	2 & 4 \\
+	\hline
+\end{tabular}    
+\begin{tabular}{|c|m{1.5cm}|m{4cm}|m{4cm}|c|c|}
+	\hline
+	\textbf{Id}&\textbf{Name}&\textbf{User story}&\textbf{How to Demo}&\textbf{Prio}&\textbf{Est}\\
+	\hline
+	7 & Modify secondary settings & 
+	%user story
+	As a registered user I want to be able to change my secondary settings (platform color theme, dashboard layout, text font and dimension, colorblind mode) & 
+	%How to demo
+	Given that I'm in the secondary option page, when I push the modify button I'll able to refill each field in the secondary option list and, after pushing the save button, the changes will be saved &
+	4 & 4 \\
+	\hline
+	8 & Modify AI theming & 
+	%user story
+	As a student, AI supervisor or tech support I want to be able to modify the prompt for AI generated theming, in order to customize my experience (or test if the AI is working correctly) & 
+	%How to demo
+	Given that I'm on the dashboard page, when I push the modify theming button and fill in the new prompt, the theming for each exercise will change in accord with the new prompt &
+	4 & 8 \\
+	\hline
+	9 & Access profile and statistics & 
+	%user story
+	As a registered user I want to be able to access my profile, in order to see if the saved info are correct and display all my progress on the platform & 
+	%How to demo
+	Given that I'm on the home page and I'm logged in, when I press on the button labeled with my username, I'll be redirected to the profile page &
+	2 & 4 \\
+	\hline
+	10 & Change user role & 
+	%user story
+	As a registered user I want to be able to change the list of roles assigned to my account, in order to dynamically align with the list of actions I need to accomplish & 
+	%How to demo
+	Given that I'm at the profile page, when I push the manage roles button I will be redirected to the roles management page and I'll be able to add and remove roles &
+	1 & 6 \\
+	\hline
+	10.1 & Add role & 
+	%user story
+	As a registered user I want to remove a role from my account, in order to remove access from useless actions & 
+	%How to demo
+	Given that I'm at the roles management page, when I press on a role and push the remove button, that role will be removed from the list and my account will not be associated with that role anymore &
+	/ & / \\
+	\hline
+	10.2 & Remove role & 
+	%user story
+	As a registered user I want to add a role to my account, in order to have access to more actions & 
+	%How to demo
+	Given that I'm at the roles management page, when I push the add button and fill in all the required info, the required role will be add to the list and my account &
+	/ & / \\
+	\hline
+\end{tabular}    
+\begin{tabular}{|c|m{1.5cm}|m{4cm}|m{4cm}|c|c|}
+	\hline
+	\textbf{Id}&\textbf{Name}&\textbf{User story}&\textbf{How to Demo}&\textbf{Prio}&\textbf{Est}\\
+	\hline
+	11 & Create course & 
+	%user story
+	As a publisher I want to be able to create new courses, in order to share my knowledge with the whole platform & 
+	%How to demo
+	Given that I'm on the dashboard page, when i press the add course button, I will be redirected to the course creation page. There I will be able to insert documents, videos, audio files, exercises and minigames. After I'll be finished and the save button is pushed, the course will be published on the platform &
+	2 & 9 \\
+	\hline
+	12 & Modify course & 
+	%user story
+	As a professor, publisher, AI supervisor, course supervisor or system admins I want to modify an existing course (add, remove or modify content), in order to make it comply to what I need & 
+	%How to demo
+	Given that I'm on a course page (and have the right to modify it), when I press the modify button I will be redirected to the course creation page, there I will be able to add, modify or remove documents, videos, audio files, exercises and minigames. After I'll be finished and the save button is pushed, the course will be modified (each class based on the course will not be modified and keep the old version of the course) &
+	2 & 6 \\
+	\hline
+	13 & Delete course & 
+	%user story
+	As a publisher, course supervisor or system admin I want to be able to delete an existing course, in order to remove from the platform unwanted info & 
+	%How to demo
+	Given that I'm on a course page (and have the right to delete it), when I push the delete button and confirm my choice, the course will be deleted from the platform (each class based on the course will be also deleted) &
+	3 & 5 \\
+	\hline
+	14 & Archive course & 
+	%user story
+	As a publisher, course supervisor or system admin I want to be able to archive an existing course, in order to remove from the platform unwanted info, but keep existing classes alive & 
+	%How to demo
+	Given that I'm on a course page (and have the right to archive it), when I push the archive button and confirm my choice, the course will be archived and made invisible from the platform (each class based on the course will stay untouched) &
+	5 & 4 \\
+	\hline
+\end{tabular}    
+\begin{tabular}{|c|m{1.5cm}|m{4cm}|m{4cm}|c|c|}
+	\hline
+	\textbf{Id}&\textbf{Name}&\textbf{User story}&\textbf{How to Demo}&\textbf{Prio}&\textbf{Est}\\
+	\hline
+	15 & View course & 
+	%user story
+	As a user I want to see any course and interact with its content & 
+	%How to demo
+	Given that I'm at the dashboard page, when I press on a course I will be redirected to its page. There the documents and reviews will be displayed, the video and audio files will be accessible, I'll be able to complete the exercises and play the minigames  &
+	3 & 3 \\
+	\hline
+	16 & Review course & 
+	%user story
+	As a registered user I want to be able to add a textual and numerical review to any course, in order to express my opinion on the quality of the selected course & 
+	%How to demo
+	Given that I'm on the course page, when I press the add review button, I'll be able to write a message and select a score among a list of options (integers from 0 to 10). After I'm finished and press the publish button, my review will be saved and displayed &
+	5 & 6 \\
+	\hline
+	17 & Create class & 
+	%user story
+	As a professor I want to create an enclosed environment for my students, in order to keep track of their learning progress & 
+	%How to demo
+	Given that I'm on the dashboard page, when i press the add class button, I will be redirected to the class creation page. There I will be able to select the course I want to base my class on. Moreover I'll be able to insert a list of students' usernames, which will have access to the class. After I'll be finished and the save button is pushed, the class will be published on the platform &
+	4 & 8 \\
+	\hline
+	18 & Modify class & 
+	%user story
+	As a professor or system admin I want to be able to change or update the course I'm basing my class on; in addition I want to modify the list of students, in order to have a dynamic experience with my students & 
+	%How to demo
+	Given that I'm at the selected class page, when I press the modify option I'll be redirected to the class creation page. There I will be able to change the course or update it to the newest version. Moreover I'll be able to modify the student list, by adding or removing usernames. After I'll be finished and the save button is pushed, the class will be updated &
+	4 & 6 \\
+	\hline
+\end{tabular}    
+\begin{tabular}{|c|m{1.5cm}|m{4cm}|m{4cm}|c|c|}
+	\hline
+	\textbf{Id}&\textbf{Name}&\textbf{User story}&\textbf{How to Demo}&\textbf{Prio}&\textbf{Est}\\
+	\hline
+	19 & Terminate class & 
+	%user story
+	As a professor or system admin I want to fully erase a class and all its data from the platform, in order to remove old, unwanted or unused classes & 
+	%How to demo
+	Given that I'm at the class page, when I press the terminate button and confirm my choice, the class, all its data and statistics will be deleted &
+	5 & 6 \\
+	\hline
+	20 & Archive class & 
+	%user story
+	As a professor or system admin I want to remove a class from the platform, but keep its statistics accessible, in order to still keep track of completed classes & 
+	%How to demo
+	Given that I'm at the class page, when I press the archive button and confirm my choice, the class will not be interactable anymore apart from the statistics &
+	5 & 7 \\
+	\hline
+	21 & View class public info & 
+	%user story
+	As a registered user I want to be able to see the existing classes on the platform, in order to be able to ask for access & 
+	%How to demo
+	Given that I'm on the platform, every published class is listed and, by pressing on one of them, its owner, title and core course are displayed &
+	4 & 4 \\
+	\hline
+	22 & Display class & 
+	%user story
+	As a student or professor I want to access the material of the course the class is based on, in order to interact with the class & 
+	%How to demo
+	Given that I'm on the dashboard page and am allowed to enter the class, when I press on it I'll be redirected to its page. There all the course components will be displayed and interactable. Moreover, I'll be able to see the username of every attendee. Furthermore I can see my statistics regarding the class' activities (as a professor I can see all students' statistics and the list of join requests) &
+	4 & 5 \\
+	\hline
+	23 & Join class & 
+	%user story
+	As a student I want to ask a professor to join its class, in order to be part of that community & 
+	%How to demo
+	Given that I'm at the dashboard page, when I press on a class, the join button will be displayed. When I press that button my username will be add to the join request list of the class &
+	4 & 4 \\
+	\hline
+	24 & Accept student & 
+	%user story
+	As a professor I want to be able to accept new students' request, in order to expand my class & 
+	%How to demo
+	Given that I'm on the class page, I can press the accept button next to the username of each username in the join list. After I press that, the student will be add to the students' list &
+	4 & 5 \\
+	\hline
+\end{tabular}    
+\begin{tabular}{|c|m{1.5cm}|m{4cm}|m{4cm}|c|c|}
+	\hline
+	\textbf{Id}&\textbf{Name}&\textbf{User story}&\textbf{How to Demo}&\textbf{Prio}&\textbf{Est}\\
+	\hline
+	25 & Leave class & 
+	%user story
+	As a student I want to be able to leave a class, in order not to be stuck in an undesired class & 
+	%How to demo
+	Given that I'm in the class page, when I press on the leave button I'll be automatically deleted from the students' list. Moreover the professor will not be able to add my username to the list, unless I request to join &
+	4 & 5 \\
+	\hline
+	26 & Publish article & 
+	%user story
+	As a publisher I want to be able to create new articles and decide whom to share them with, in order to share some smaller fragments of knowledge & 
+	%How to demo
+	Given that I'm on the dashboard page, when I press the add article button I'll be redirected to the article creation page. There I will be able to insert one document and/or one audio/video file. Moreover I can select a list of users who'll be able to see the article or just make it public. After I'm done and the save button is pushed the new article will be published on the platform &
+	2 & 6 \\
+	\hline
+	27 & Modify article & 
+	%user story
+	As a publisher, course supervisor or system admin I want to be able to modify an existing article in order to make it better & 
+	%How to demo
+	Given that I'm on the article page, when I press the modify button I'll be redirected to the article creation page. There I'll be able to modify or substitute the content of the materials on the article. Moreover I'll be able to modify the visibility of the article and the users who can see it. After I’ll be finished and the save button is pushed, the article will be modified &
+	2 & 5 \\
+	\hline
+	28 & Delete article & 
+	%user story
+	As a publisher, course supervisor or system admin I want to be able to delete an article if it's incorrect or obsolete & 
+	%How to demo
+	When I'm on the article page and I press the delete button, after confirming my choice, the article will be removed entirely from the platform &
+	3 & 5 \\
+	\hline
+\end{tabular}    
+\begin{tabular}{|c|m{1.5cm}|m{4cm}|m{4cm}|c|c|}
+	\hline
+	\textbf{Id}&\textbf{Name}&\textbf{User story}&\textbf{How to Demo}&\textbf{Prio}&\textbf{Est}\\
+	\hline
+	29 & Archive article & 
+	%user story
+	As a publisher, course supervisor or system admin I want to be able to archive the article previously published, in order to review it before remake it public & 
+	%How to demo
+	Given that I'm in the article page, when I press the archive button and confirm my choice, the article will become invisible to everyone apart from the owner &
+	5 & 6 \\
+	\hline
+	30 & View article & 
+	%user story
+	As a registered user I want to be able to access the info published on the article, in order to acculturate myself & 
+	%How to demo
+	Given that I'm on the dashboard page, when I press on a visible article I'm redirected to its page. There I'll be able to read the document, see the video and/or watch the video &
+	2 & 3 \\
+	\hline
+	31 & Review article & 
+	%user story
+	As a registered user I want to be able to publish a comment and/or a numeric value regarding an article, in order to express my opinion & 
+	%How to demo
+	Given that I'm in the article page, when I press the add review button I’ll be able to write a message and select a score among a list of options (integers from 0 to 10). After I’m finished and press the publish button, my review will be saved and displayed &
+	5 & 6 \\
+	\hline
+	32 & Create minigame & 
+	%user story
+	As a developer I want to be able to create a minigame, in order to satisfy the request of a publisher & 
+	%How to demo
+	Given that I'm on the dashboard page, when I press on the create minigame button I'll be redirected to the game creation engine. There the engine will allow me to model the aesthetic of the game, its mechanics, rules and all other components. After I'm done and the publish button is pressed, the minigame is published on the platform in the dashboard page &
+	6 & 12 \\
+	\hline
+	33 & Modify minigame & 
+	%user story
+	As a developer, course supervisor, system admin or tech support I want to be able to modify an existing minigame to better it & 
+	%How to demo
+	Given that I'm on the game page, when I press the modify button I'll be redirected to the game creation engine. There I'll be able to modify every aspect of the minigame and, after I'll press the save button, all iterations of the minigame on the platform will be updated &
+	6 & 11 \\
+	\hline
+\end{tabular}    
+\begin{tabular}{|c|m{1.5cm}|m{4cm}|m{4cm}|c|c|}
+	\hline
+	\textbf{Id}&\textbf{Name}&\textbf{User story}&\textbf{How to Demo}&\textbf{Prio}&\textbf{Est}\\
+	\hline
+	34 & Delete minigame & 
+	%user story
+	As a developer, course supervisor or system admin I want to be able to delete a minigame and all its iteration on the platform & 
+	%How to demo
+	Given that I'm on the minigame page, when I press the delete button and confirm my choice, the minigame is deleted from the platform both from the dashboard and all the courses containing it &
+	7 & 6 \\
+	\hline
+	35 & Archive minigame & 
+	%user story
+	As a developer, course supervisor or system admin I want to be able to archive a minigame, in order to prevent further use of it in new courses, but not modify the existing ones & 
+	%How to demo
+	Given that I'm on the minigame page, when I press the archive button and confirm my choice, the minigame is deleted from the dashboard and cannot be assigned to any new course &
+	7 & 7 \\
+	\hline
+	36 & Add minigame from dev & 
+	%user story
+	As a developer I want to be able to add the minigame I created to the required course, in order to complete my work & 
+	%How to demo
+	Given that I'm in the game page, when I press the add to course button the list of courses I have access to will be displayed. When I press on one of them and confirm the choice, the game will be add to the selected course &
+	6 & 5 \\
+	\hline
+	37 & Add minigame from observer & 
+	%user story
+	As a publisher, course supervisor or system admin I want to be able to add a minigame to a specific course, in order to make such course more interactive & 
+	%How to demo
+	Given that I'm at the course page, when I press the add minigame button a list of available minigames is opened. When I press on one of them and confirm my choice, such minigame is add to the course &
+	6 & 5 \\
+	\hline
+	38 & View and play minigame & 
+	%user story
+	As a user I want to be able to play the available minigames, both on the dashboard and the courses, in order to learn by doing & 
+	%How to demo
+	Given that I'm on the dashboard or on a course page, when I press on the name of the minigame I'll be redirected to its page. There I'll be able to interact and play with the game as intended by the creator &
+	6 & 10 \\
+	\hline
+\end{tabular}    
+\begin{tabular}{|c|m{1.5cm}|m{4cm}|m{4cm}|c|c|}
+	\hline
+	\textbf{Id}&\textbf{Name}&\textbf{User story}&\textbf{How to Demo}&\textbf{Prio}&\textbf{Est}\\
+	\hline
+	39 & Pay developer & 
+	%user story
+	As a publisher I want to be able to pay the developer I hired when they complete the minigame I commissioned, in order to delegate that part of the course creation & 
+	%How to demo
+	Given that I'm at the dashboard page, when I press on the pay button I'll be redirected to the payment page. There I'll be able to see a list of developers and select the person I want to pay. After that I'll select the payment method I want to use and follow the iter associated with the external method selected &
+	6 & 7 \\
+	\hline
+	40 & Use tech support chat & 
+	%user story
+	As a registered user I want to internally discuss a problem of the platform, in order to solve them and better the platform experience & 
+	%How to demo
+	Given that I'm on any page of the platform, when I press the tech chat button, the chat window will be displayed on top of the page I'm in. As a normal user I'll be able to send messages to the tech supports. As a tech support I'll be able to respond to each message (coming from different channels depending on the sender) to help solve the problems &
+	5 & 9 \\
+	\hline
+	41 & Use dev chat & 
+	%user story
+	As a publisher or developer I want to internally talk about the creation of a minigame, in order to have a specialized person develop them & 
+	%How to demo
+	Given that I'm on the dashboard page, when I press on the dev chat button I'll be redirected to the chat page. There I'll have a channel for each user I have talked to and a list of existing publishers and developers to select and start a chat with &
+	6 & 9 \\
+	\hline
+	42 & Search material & 
+	%user story
+	As a user I want to be able to search for the info I want, in order to find only the stuff I'm interested in & 
+	%How to demo
+	Given that I'm on the dashboard page, when I press on the search button I'll be able to insert the words and select the tags I want to search with. After that the dashboard's content will be reordered based on accordance with the required parameters &
+	2 & 7 \\
+	\hline
+	43 & Remove review & 
+	%user story
+	As a system admin I want to be able to remove reviews of contents, in order to moderate the environment and avoid toxic behaviours & 
+	%How to demo
+	Given that I'm on any reviewable content, when I press on the delete button next to a review and confirm my choice, such review will be eliminated from the platform &
+	5 & 5 \\
+	\hline
+\end{tabular}
+
+\subsection{Second definition of backlog item}
+
+\subsubsection{Login}
+\begin{itemize}
+	\item ID: 1
+	\item Title: Login
+	\item User story: As a registered user I want to log into the platform so that I can access my roles privileges
+	\item Acceptance criteria: The user is able to access their account with their credentials
+	\item Priority: 1
+	\item Estimate: 8
+	\item Status: to-do
+	\item Sprint assignment: S2
+	\item Theme: Account management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Logout}
+\begin{itemize}
+	\item ID: 2
+	\item Title: Logout
+	\item User story: As a registered user I want to log out of the platform to prevent anyone to use my roles’ privileges without my supervision
+	\item Acceptance criteria: The user is able to return to anonymous mode after being logged in
+	\item Priority: 1
+	\item Estimate: 5
+	\item Status: to-do
+	\item Sprint assignment: S2
+	\item Theme: Account management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Credential recovery}
+\begin{itemize}
+	\item ID: 3
+	\item Title: Credential recovery
+	\item User story: As a registered user I want to be able to recover my credentials if I lose or forget them, in order to avoid losing my account over a single problem
+	\item Acceptance criteria: The new credentials can be shipped through every recovery channel with a sufficiently small time delay
+	\item Priority: 3
+	\item Estimate: 8
+	\item Status: to-do
+	\item Sprint assignment: S4 or later
+	\item Theme: Account management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Register Account}
+\begin{itemize}
+	\item ID: 4
+	\item Title: Register Account
+	\item User story: As an unregistered user I want to register to the platform to keep track of my progresses and receive one or more roles
+	\item Acceptance criteria: Any new account is correctly registered in the DB with its associated roles
+	\item Priority: 1
+	\item Estimate: 8
+	\item Status: to-do
+	\item Sprint assignment: S2
+	\item Theme: Account management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Delete account}
+\begin{itemize}
+	\item ID: 5
+	\item Title: Delete account
+	\item User story: As a registered user I want to be able to delete my account to delete my info from the platform
+	\item Acceptance criteria: All the info regarding any account can be completely removed from the DB
+	\item Priority: 1
+	\item Estimate: 4
+	\item Status: to-do
+	\item Sprint assignment: S2
+	\item Theme: Account management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Modify core settings}
+\begin{itemize}
+	\item ID: 6
+	\item Title: Modify core settings
+	\item User story: As a registered user I want to be able to modify my core settings (username, password, recovery channel and personal info) in order to be able to change my mind after registration
+	\item Acceptance criteria: The info in the DB can be easily be modified only be the owner of a certain account
+	\item Priority: 2
+	\item Estimate: 4
+	\item Status: to-do
+	\item Sprint assignment: S3
+	\item Theme: Account management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Modify secondary settings}
+\begin{itemize}
+	\item ID: 7
+	\item Title: Modify secondary settings
+	\item User story: As a registered user I want to be able to change my secondary settings (platform color theme, dashboard layout, text font and dimension, colorblind mode)
+	\item Acceptance criteria: The platform gets modified in accordance with the new info in a relatively short amount of time
+	\item Priority: 4
+	\item Estimate: 4
+	\item Status: to-do
+	\item Sprint assignment: S4 or later
+	\item Theme: Account management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Modify AI theming}
+\begin{itemize}
+	\item ID: 8
+	\item Title: Modify AI theming
+	\item User story: As a student, AI supervisor or tech support I want to be able to modify the prompt for AI generated theming, in order to customize my experience (or test if the AI is working correctly)
+	\item Acceptance criteria: The exercises theming is modified in accordance with the new prompt in an acceptable amount of time
+	\item Priority: 4
+	\item Estimate: 8
+	\item Status: to-do
+	\item Sprint assignment: S4 or later
+	\item Theme: Account management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Access profile and statistics}
+\begin{itemize}
+	\item ID: 9
+	\item Title: Access profile and statistics
+	\item User story: As a registered user I want to be able to access my profile, in order to see if the saved info are correct and display all my progress on the platform
+	\item Acceptance criteria: The user info can be displayed whenever the user wants easily
+	\item Priority: 2
+	\item Estimate: 4
+	\item Status: to-do
+	\item Sprint assignment: S2/S3
+	\item Theme: Account management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Change user role}
+\begin{itemize}
+	\item ID: 10
+	\item Title: Change user role
+	\item User story: As a registered user I want to be able to change the list of roles assigned to my account, in order to dynamically align with the list of actions I need to accomplish
+	\item Acceptance criteria: The roles can be changed (add or remove) with the correct security and accessibility
+	\item Priority: 1
+	\item Estimate: 6
+	\item Status: to-do
+	\item Sprint assignment: S2
+	\item Theme: Account management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Create course}
+\begin{itemize}
+	\item ID: 11
+	\item Title: Create course
+	\item User story: As a publisher I want to be able to create new courses, in order to share my knowledge with the whole platform
+	\item Acceptance criteria: A new course can be modeled and published how and when a publisher wants
+	\item Priority: 2
+	\item Estimate: 9
+	\item Status: to-do
+	\item Sprint assignment: S3
+	\item Theme: Course management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Modify course}
+\begin{itemize}
+	\item ID: 12
+	\item Title: Modify course
+	\item User story: As a professor, publisher, AI supervisor, course supervisor or system admins I want to modify an existing course (add, remove or modify content), in order to make it comply to what I need
+	\item Acceptance criteria: The user is able to modify the content of a course they have the right to whenever they want
+	\item Priority: 2
+	\item Estimate: 6
+	\item Status: to-do
+	\item Sprint assignment: S3
+	\item Theme: Course management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Delete course}
+\begin{itemize}
+	\item ID: 13 
+	\item Title: Delete course
+	\item User story: As a publisher, course supervisor or system admin I want to be able to delete an existing course, in order to remove from the platform unwanted info
+	\item Acceptance criteria: Every trace of the selected course is removed from the DB
+	\item Priority: 3
+	\item Estimate: 5
+	\item Status: to-do
+	\item Sprint assignment: S3/S4
+	\item Theme: Course management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Archive course}
+\begin{itemize}
+	\item ID: 14 
+	\item Title: Archive course
+	\item User story: As a publisher, course supervisor or system admin I want to be able to archive an existing course, in order to remove from the platform unwanted info, but keep existing classes alive
+	\item Acceptance criteria: The course is not accessible anymore from the platform apart for the classes containing it
+	\item Priority: 5
+	\item Estimate: 4
+	\item Status: to-do
+	\item Sprint assignment: S5 or later
+	\item Theme: Course management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{View course}
+\begin{itemize}
+	\item ID: 15
+	\item Title: View course
+	\item User story: As a user I want to see any course and interact with its content
+	\item Acceptance criteria: Any public course is accessible from the platform and its content can be interacted without bugs
+	\item Priority: 3
+	\item Estimate: 3
+	\item Status: to-do
+	\item Sprint assignment: S3
+	\item Theme: Course management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Review course}
+\begin{itemize}
+	\item ID: 16
+	\item Title: Review course
+	\item User story: As a registered user I want to be able to add a textual and numerical review to any course, in order to express my opinion on the quality of the selected course
+	\item Acceptance criteria: The reviews on courses can be published and visualized easily
+	\item Priority: 5
+	\item Estimate: 6
+	\item Status: to-do
+	\item Sprint assignment: S5 or later
+	\item Theme: Course management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Create class}
+\begin{itemize}
+	\item ID: 17
+	\item Title: Create class
+	\item User story: As a professor I want to create an enclosed environment for my students, in order to keep track of their learning progress
+	\item Acceptance criteria: A new class environment can easily be based on a course and published for the given student set to see
+	\item Priority: 4
+	\item Estimate: 8
+	\item Status: to-do
+	\item Sprint assignment: S4 or later
+	\item Theme: Class management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Modify class}
+\begin{itemize}
+	\item ID: 18
+	\item Title: Modify class
+	\item User story: As a professor or system admin I want to be able to change or update the course I'm basing my class on; in addition I want to modify the list of students, in order to have a dynamic experience with my students
+	\item Acceptance criteria: The class' course and list of students can be modified whenever the people with the right to want and the modification is saved in the DB in a short time
+	\item Priority: 4
+	\item Estimate: 6
+	\item Status: to-do
+	\item Sprint assignment: S4 or later
+	\item Theme: Class management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Terminate class}
+\begin{itemize}
+	\item ID: 19
+	\item Title: Terminate class
+	\item User story: As a professor or system admin I want to fully erase a class and all its data from the platform, in order to remove old, unwanted or unused classes
+	\item Acceptance criteria: The class and all its data are entirely removed from the platform and DB
+	\item Priority: 5
+	\item Estimate: 6
+	\item Status: to-do
+	\item Sprint assignment: S5 or later
+	\item Theme: Class management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Archive class}
+\begin{itemize}
+	\item ID: 20
+	\item Title: Archive class
+	\item User story: As a professor or system admin I want to remove a class from the platform, but keep its statistics accessible, in order to still keep track of completed classes
+	\item Acceptance criteria: Classes and their data cannot be accessed anymore from the platform apart from the classes' statistics
+	\item Priority: 5
+	\item Estimate: 7
+	\item Status: to-do
+	\item Sprint assignment: S5 or later
+	\item Theme: Class management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{View class public info}
+\begin{itemize}
+	\item ID: 21 
+	\item Title: View class public info
+	\item User story: As a registered user I want to be able to see the existing classes on the platform, in order to be able to ask for access
+	\item Acceptance criteria: The classes' public info are displayed every time a registered user selects a public class entry
+	\item Priority: 4
+	\item Estimate: 4
+	\item Status: to-do
+	\item Sprint assignment: S4 or later
+	\item Theme: Class management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Display class}
+\begin{itemize}
+	\item ID: 22
+	\item Title: Display class
+	\item User story: As a student or professor I want to access the material of the course the class is based on, in order to interact with the class
+	\item Acceptance criteria: The class' attendees can access all the material contained in it and interact with the games/exercises
+	\item Priority: 4
+	\item Estimate: 5
+	\item Status: to-do
+	\item Sprint assignment: S4 or later
+	\item Theme: Class management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Join class}
+\begin{itemize}
+	\item ID: 23 
+	\item Title: Join class
+	\item User story: As a student I want to ask a professor to join its class, in order to be part of that community
+	\item Acceptance criteria: The name of the student is add to the class' list of join request on the class and such list is updated in a short time
+	\item Priority: 4
+	\item Estimate: 4
+	\item Status: to-do
+	\item Sprint assignment: S4 or later
+	\item Theme: Class management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Accept student}
+\begin{itemize}
+	\item ID: 24
+	\item Title: Accept student
+	\item User story: As a professor I want to be able to accept new students' request, in order to expand my class
+	\item Acceptance criteria: The selected student is add to the class' list of students, such list is updated and the student is granted access to the class' resources
+	\item Priority: 4
+	\item Estimate: 5
+	\item Status: to-do
+	\item Sprint assignment: S4 or later
+	\item Theme: Class management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Leave class}
+\begin{itemize}
+	\item ID: 25
+	\item Title: Leave class
+	\item User story: As a student I want to be able to leave a class, in order not to be stuck in an undesired class
+	\item Acceptance criteria: The student leaves a class and, if the professor tries to re-invite the student, they are not add to the join list for the left class
+	\item Priority: 4
+	\item Estimate: 5
+	\item Status: to-do
+	\item Sprint assignment: S4 or later
+	\item Theme: Class management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Publish article}
+\begin{itemize}
+	\item ID: 26
+	\item Title: Publish article
+	\item User story: As a publisher I want to be able to create new articles and decide whom to share them with, in order to share some smaller fragments of knowledge
+	\item Acceptance criteria: the article is modeled and published however the publisher wants and is accessible to whomever they want
+	\item Priority: 2
+	\item Estimate: 6
+	\item Status: to-do
+	\item Sprint assignment: S2/S3
+	\item Theme: Article management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Modify article}
+\begin{itemize}
+	\item ID: 27 
+	\item Title: Modify article
+	\item User story: As a publisher, course supervisor or system admin I want to be able to modify an existing article in order to make it better
+	\item Acceptance criteria: Every modification to the article's content or visibility is saved and applied in a short range of time
+	\item Priority: 2
+	\item Estimate: 5
+	\item Status: to-do
+	\item Sprint assignment: S2/S3
+	\item Theme: Article management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Delete article}
+\begin{itemize}
+	\item ID: 28
+	\item Title: Delete article
+	\item User story: As a publisher, course supervisor or system admin I want to be able to delete an article if it's incorrect or obsolete
+	\item Acceptance criteria: The article is entirely removed from the platform and DB
+	\item Priority: 3
+	\item Estimate: 5
+	\item Status: to-do
+	\item Sprint assignment: S3 or later
+	\item Theme: Article management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Archive article}
+\begin{itemize}
+	\item ID: 29
+	\item Title: Archive article
+	\item User story: As a publisher, course supervisor or system admin I want to be able to archive the article previously published, in order to review it before remake it public
+	\item Acceptance criteria: The article becomes inaccessible for anyone other than its owner
+	\item Priority: 5
+	\item Estimate: 6
+	\item Status: to-do
+	\item Sprint assignment: S5 or later
+	\item Theme: Article management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{View article}
+\begin{itemize}
+	\item ID: 30
+	\item Title: View article
+	\item User story: As a registered user I want to be able to access the info published on the article, in order to acculturate myself
+	\item Acceptance criteria: The article page is accessible by everyone on the platform
+	\item Priority: 2
+	\item Estimate: 3
+	\item Status: to-do
+	\item Sprint assignment: S2/S3
+	\item Theme: Article management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Review article}
+\begin{itemize}
+	\item ID: 31
+	\item Title: Review article
+	\item User story: As a registered user I want to be able to publish a comment and/or a numeric value regarding an article, in order to express my opinion
+	\item Acceptance criteria: The user's review is saved and published on the platform for anyone to see
+	\item Priority: 5
+	\item Estimate: 6
+	\item Status: to-do
+	\item Sprint assignment: S5 or later
+	\item Theme: Article management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Create minigame}
+\begin{itemize}
+	\item ID: 32
+	\item Title: Create minigame
+	\item User story: As a developer I want to be able to create a minigame, in order to satisfy the request of a publisher
+	\item Acceptance criteria: The minigame development environment is accessible and functional to the developer. Moreover the games created are functional and bug-less
+	\item Priority: 6
+	\item Estimate: 12
+	\item Status: to-do
+	\item Sprint assignment: S6 or later
+	\item Theme: Minigame management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Modify minigame}
+\begin{itemize}
+	\item ID: 33
+	\item Title: Modify minigame
+	\item User story: As a developer, course supervisor, system admin or tech support I want to be able to modify an existing minigame to better it
+	\item Acceptance criteria: The modification through the development environment is saved on the entire platform
+	\item Priority: 6
+	\item Estimate: 11
+	\item Status: to-do
+	\item Sprint assignment: S6 or later
+	\item Theme: Minigame management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Delete minigame}
+\begin{itemize}
+	\item ID: 34
+	\item Title: Delete minigame
+	\item User story: As a developer, course supervisor or system admin I want to be able to delete a minigame and all its iteration on the platform
+	\item Acceptance criteria: All the minigame's presence is erased from the entire platform and DB 
+	\item Priority: 7
+	\item Estimate: 6
+	\item Status: to-do
+	\item Sprint assignment: S7 or later
+	\item Theme: Minigame management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Archive minigame}
+\begin{itemize}
+	\item ID: 35
+	\item Title: Archive minigame
+	\item User story: As a developer, course supervisor or system admin I want to be able to archive a minigame, in order to prevent further use of it in new courses, but not modify the existing ones
+	\item Acceptance criteria: The minigame is inaccessible apart through the courses already containing it 
+	\item Priority: 7
+	\item Estimate: 7
+	\item Status: to-do
+	\item Sprint assignment: S7 or later
+	\item Theme: Minigame management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Add minigame from dev}
+\begin{itemize}
+	\item ID: 36
+	\item Title: Add minigame from dev
+	\item User story: As a developer I want to be able to add the minigame I created to the required course, in order to complete my work
+	\item Acceptance criteria: The minigame is properly linked to the course page and when a user presses on it the page opens correctly
+	\item Priority: 6
+	\item Estimate: 5
+	\item Status: to-do
+	\item Sprint assignment: S6 or later
+	\item Theme: Minigame management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Add minigame from observer}
+\begin{itemize}
+	\item ID: 37
+	\item Title: Add minigame from observer
+	\item User story: As a publisher, course supervisor or system admin I want to be able to add a minigame to a specific course, in order to make such course more interactive
+	\item Acceptance criteria: The minigame is properly linked to the course page and when a user presses on it the page opens correctly
+	\item Priority: 6
+	\item Estimate: 5
+	\item Status: to-do
+	\item Sprint assignment: S6 or later
+	\item Theme: Minigame management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{View and play minigame}
+\begin{itemize}
+	\item ID: 38
+	\item Title: View and play minigame
+	\item User story: As a user I want to be able to play the available minigames, both on the dashboard and the courses, in order to learn by doing
+	\item Acceptance criteria: The minigame is correctly visualized and works properly
+	\item Priority: 6
+	\item Estimate: 10
+	\item Status: to-do
+	\item Sprint assignment: S6 or later
+	\item Theme: Minigame management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Pay developer}
+\begin{itemize}
+	\item ID: 39
+	\item Title: Pay developer
+	\item User story: As a publisher I want to be able to pay the developer I hired when they complete the minigame I commissioned, in order to delegate that part of the course creation
+	\item Acceptance criteria: The external payment system works properly to pay the developers
+	\item Priority: 6
+	\item Estimate: 7
+	\item Status: to-do
+	\item Sprint assignment: S6 or later
+	\item Theme: Minigame management
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Use tech support chat}
+\begin{itemize}
+	\item ID: 40
+	\item Title: Use tech support chat
+	\item User story: As a registered user I want to internally discuss a problem of the platform, in order to solve them and better the platform experience
+	\item Acceptance criteria: The chat system works properly and can be relied upon to report bugs
+	\item Priority: 5
+	\item Estimate: 9
+	\item Status: to-do
+	\item Sprint assignment: S5 or later
+	\item Theme: Chat systems
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Use dev chat}
+\begin{itemize}
+	\item ID: 41
+	\item Title: Use dev chat
+	\item User story: As a publisher or developer I want to internally talk about the creation of a minigame, in order to have a specialized person develop them
+	\item Acceptance criteria: The chat system works properly and can be relied upon to discuss the development of a minigame
+	\item Priority: 6
+	\item Estimate: 9
+	\item Status: to-do
+	\item Sprint assignment: S6 or later
+	\item Theme: Chat systems
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Search material}
+\begin{itemize}
+	\item ID: 42
+	\item Title: Search material
+	\item User story: As a user I want to be able to search for the info I want, in order to find only the stuff I'm interested in
+	\item Acceptance criteria: The search engine filters and orders elements correctly on the dashboard
+	\item Priority: 2
+	\item Estimate: 7
+	\item Status: to-do
+	\item Sprint assignment: S2/S3
+	\item Theme: General purpose
+	\item Notes:
+\end{itemize}
+
+\subsubsection{Remove review}
+\begin{itemize}
+	\item ID: 43
+	\item Title: Remove review
+	\item User story: As a system admin I want to be able to remove reviews of contents, in order to moderate the environment and avoid toxic behaviours
+	\item Acceptance criteria: The reviews are entirely removed from the platform and DB
+	\item Priority: 5
+	\item Estimate: 5
+	\item Status: to-do
+	\item Sprint assignment: S5 or later
+	\item Theme: General purpose
+	\item Notes:
+\end{itemize}
