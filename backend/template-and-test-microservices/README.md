@@ -46,6 +46,11 @@ npm install express
   }
 ```
 
+4. Sync the installation:
+```
+npm install
+```
+
 ### Run the service
 
 The entry point of the service is `src/index.js`. We can run the service with this command:
