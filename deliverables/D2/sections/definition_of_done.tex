@@ -1,2 +1,79 @@
 \section{Definition of done} \label{definition_of_done}
 
+\subsection{Overview}
+
+The Definition of Done (DoD) is a comprehensive checklist that must be completed for each task, user story, or feature to be considered complete. This section defines the criteria that must be met for a task to be considered "done" for RadiantIQ development.
+
+\subsection{Criteria}
+
+\subsubsection{Code of conduct}
+During or before code development every member of the team must take into account the following indications.
+\begin{itemize}
+	\item Every trance of code should be appropriately commented
+	\item Every logical trance of the code should be documented in order to describe its logic
+	\item Each element of the code should have a meaningful name and follow a coherent notation
+	\item Every commit of a completed task should follow the adequate naming and git policy
+	\item Each modification to existing code should originate from a task, or be a decision taken considering the whole team
+	\item Every addition to the application should be discussed, approved, put in the project backlog and assigned to a sprint before being implemented
+\end{itemize}
+
+\subsubsection{Testing}
+\begin{itemize}
+    \item Unit tests have been written and cover all new and changed functionality.
+    \item All unit tests passed.
+    \item Integration tests have been performed to ensure new changes do not break existing functionality.
+    \item Functional tests have been conducted to verify the feature works as expected.
+    \item Regression tests have been run and passed to ensure existing functionality is not affected.
+    \item Performance tests have been conducted, and performance metrics meet acceptable thresholds.
+    \item No critical bugs remain unresolved.
+	\item All tests in Github Actions are passing.
+\end{itemize}
+
+\subsubsection{Documentation}
+\begin{itemize}
+    \item Code is documented, including inline comments where necessary.
+    \item Public APIs have clear and complete documentation.
+    \item User-facing documentation has been updated (if applicable).
+    \item Release notes have been updated to reflect the new changes.
+\end{itemize}
+
+\subsubsection{Security}
+\begin{itemize}
+    \item Security vulnerabilities have been pointed out.
+    \item Dependencies have been reviewed and updated to ensure there are no security vulnerabilities.
+    \item Data privacy concerns have been addressed.
+\end{itemize}
+
+\subsubsection{Deployment and Release}
+\begin{itemize}
+    \item The feature or fix has been deployed to a staging environment.
+    \item All deployment scripts have been tested and are functioning correctly.
+    \item The feature or fix has been demonstrated to stakeholders and feedback has been incorporated.
+    \item Rollback plans have been prepared in case of deployment failure.
+	\item Code is compatible with at least the top 3 most popular browsers
+	\item Code is compatible with at least one mobile device (android based)
+\end{itemize}
+
+
+\subsection{Process}
+
+\subsubsection{Review and Approval}
+\begin{itemize}
+    \item Each task or feature must undergo a code review process.
+	\item Code respects the associated functional requirements completely
+	\item Code runs in accordance with the specified non-functional requirements
+    \item Reviewers must verify that all DoD criteria are met before approving the task.
+\end{itemize}
+
+\subsubsection{Quality Assurance}
+\begin{itemize}
+    \item Quality Assurance (QA) engineers will conduct testing to ensure all criteria are met.
+    \item Any issues identified during testing must be resolved before the task is considered done.
+\end{itemize}
+
+\subsubsection{Deployment}
+\begin{itemize}
+    \item Ensure that the deployment pipeline is green and the feature is deployable.
+    \item Verify that all necessary documentation and release notes are prepared.
+    \item Verify that the feature has been deployed to Render and is functioning as expected.
+\end{itemize}
