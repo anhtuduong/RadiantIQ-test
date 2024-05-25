@@ -1,0 +1,9 @@
+version: '3'
+services:
+  radiantiq-payment-service:
+    image: radiantiq-payment-service
+    container_name: radiantiq-payment-service
+    restart: unless-stopped
+    ports:
+      - "3007:3007"
+    
