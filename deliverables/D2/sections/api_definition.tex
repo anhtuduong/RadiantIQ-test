@@ -2,41 +2,35 @@
 
 Creating a well-defined API is crucial for ensuring clear communication between different services. This section will be a guideline for establishing a structured and consistent approach to defining APIs in RadiantIQ project.
 
-The API definition will be documented in the OpenAPI Specification (OAS) format, located in the \texttt{api} directory of the project repository and also published on \href{https://app.swaggerhub.com/apis/RadiantIQ/RadiantIQ/1.0.0}{\textcolor{blue}{SwaggerHub}}.
+The API definition will be documented in GraphQL Schema Definition Language (SDL) format, located in the \texttt{api} directory of the project repository and also published on \href{TODO add link here}{\textcolor{blue}{RadiantIQ GraphQL API documentation}}.
 
 \subsection{General Principles}
 
 \begin{itemize}
     \item \textbf{Consistency:} Ensure that naming conventions, structures, and responses are consistent across all endpoints.
     \item \textbf{Simplicity:} Design the API to be simple and intuitive, making it easy for everyone to understand and use.
-    \item \textbf{RESTful Principles:} Follow RESTful design principles, including stateless operations and resource-based URIs.
-    \item \textbf{Documentation:} Document the API comprehensively, including all endpoints, methods, parameters, request and response formats, and error codes.
+    \item \textbf{GraphQL Principles:} Follow GraphQL design principles, including declarative data fetching and single endpoint structure.
+    \item \textbf{Documentation:} Document the API comprehensively, including all queries, mutations, parameters, request and response formats, and error codes.
     \item \textbf{Versioning:} Include versioning in the API to allow for backward compatibility and future updates.
     \item \textbf{Security:} Implement appropriate security measures, such as authentication and authorization, to protect the API from unauthorized access.
     \item \textbf{Error Handling:} Define clear error messages and codes to help developers troubleshoot issues.
     \item \textbf{Testing:} Test the API thoroughly to ensure that it functions as expected and returns the correct responses.
 \end{itemize}
 
-\subsection{API Endpoints}
+\subsection{API Schema}
 
 \begin{itemize}
-    \item \textbf{Resource-Based URIs:} Use resource-based URIs to represent entities in the system, following a hierarchical structure.
-    \item \textbf{HTTP Methods:} Use appropriate HTTP methods (GET, POST, PUT, DELETE) to perform CRUD operations on resources.
-    \item \textbf{Response Codes:} Use standard HTTP response codes (200, 201, 400, 401, 404, 500, etc.) to indicate the status of the request.
-    \item \textbf{Request and Response Formats:} Use JSON as the default format for both request and response bodies.
-    \item \textbf{Filtering and Sorting:} Allow users to filter and sort results based on specific criteria.
+\item \textbf{Type Definitions:} Use type definitions to represent entities in the system, following a hierarchical structure.
+\item \textbf{Queries and Mutations:} Use queries for fetching data and mutations for modifying data.
+\item \textbf{Response Codes:} Although GraphQL doesn't use HTTP status codes in the same way as REST, ensure meaningful error messages are provided in the response.
+\item \textbf{Request and Response Formats:} Use JSON as the default format for both request and response bodies.
+\item \textbf{Filtering and Sorting:} Allow users to filter and sort results based on specific criteria within the query parameters.
 \end{itemize}
 
 \subsection{Authentication and Authorization}
 
 \begin{itemize}
-    \item \textbf{Authentication:} Use token-based authentication (JWT) to authenticate users and secure API endpoints.
-    \item \textbf{Authorization:} Implement role-based access control to restrict access to certain endpoints based on user roles.
-    \item \textbf{Rate Limiting:} Implement rate limiting to prevent abuse and protect the API from excessive requests.
+\item \textbf{Authentication:} Use token-based authentication (JWT) to authenticate users and secure API endpoints.
+\item \textbf{Authorization:} Implement role-based access control to restrict access to certain queries and mutations based on user roles.
+\item \textbf{Rate Limiting:} Implement rate limiting to prevent abuse and protect the API from excessive requests.
 \end{itemize}
-
-
-
-
-
-
