@@ -34,3 +34,1076 @@ The API definition will be documented in GraphQL Schema Definition Language (SDL
 \item \textbf{Authorization:} Implement role-based access control to restrict access to certain queries and mutations based on user roles.
 \item \textbf{Rate Limiting:} Implement rate limiting to prevent abuse and protect the API from excessive requests.
 \end{itemize}
+
+\subsection{APIs in GraphQL}
+\subsubsection{Account}
+\begin{minted}{python}
+	"""
+	Represents a user in the system.
+	"""
+	type User {
+		"""
+		A unique identifier for the user.
+		"""
+		id: ID!
+		
+		"""
+		The username of the user.
+		"""
+		username: String!
+		
+		"""
+		The roles assigned to the user.
+		"""
+		roles: [UserRole!]!
+		
+		"""
+		The first name of the user.
+		"""
+		name: String!
+		
+		"""
+		The last name of the user.
+		"""
+		surname: String!
+		
+		"""
+		The age of the user.
+		"""
+		age: Int!
+		
+		"""
+		The date of birth of the user (optional).
+		"""
+		dateOfBirth: Int
+		
+		"""
+		The gender of the user (optional).
+		"""
+		gender: String
+		
+		"""
+		The recovery method for the user's account.
+		"""
+		recoveryMethod: String!
+	}
+	
+	"""
+	Enumeration of possible user roles.
+	"""
+	enum UserRole {
+		"""
+		Student role.
+		"""
+		STUDENT
+		
+		"""
+		Professor role.
+		"""
+		PROFESSOR
+		
+		"""
+		Publisher role.
+		"""
+		PUBLISHER
+		
+		"""
+		Developer role.
+		"""
+		DEVELOPER
+		
+		"""
+		AI Supervisor role.
+		"""
+		AI_SUPERVISOR
+		
+		"""
+		Tech Support role.
+		"""
+		TECH_SUPPORT
+		
+		"""
+		Course Supervisor role.
+		"""
+		COURSE_SUPERVISOR
+		
+		"""
+		System Admin role.
+		"""
+		SYSTEM_ADMIN
+	}
+	
+	"""
+	Represents the payload returned after authentication.
+	"""
+	type AuthPayload {
+		"""
+		The authentication token.
+		"""
+		token: String
+		
+		"""
+		The user object.
+		"""
+		user: User
+	}
+	
+	"""
+	Root query type.
+	"""
+	type Query {
+		"""
+		Fetches the profile of the authenticated user.
+		"""
+		userProfile: User @authenticated
+	}
+	
+	"""
+	Root mutation type.
+	"""
+	type Mutation {
+		"""
+		Logs a user into the system.
+		"""
+		login(username: String!, password: String!): AuthPayload
+		
+		"""
+		Logs out the authenticated user.
+		"""
+		logout: Boolean @authenticated
+		
+		"""
+		Initiates a process to recover forgotten credentials.
+		"""
+		recoverCredentials: Boolean
+		
+		"""
+		Registers a new user account.
+		"""
+		registerAccount(username: String!, password: String!, 
+		roles: [UserRole!]!): User
+		
+		"""
+		Deletes the authenticated user's account.
+		"""
+		deleteAccount(password: String!): Boolean @authenticated
+		
+		"""
+		Modifies core settings of the system.
+		"""
+		modifyCoreSettings(password: String!, 
+		newSettings: [String!]!): Boolean @authenticated
+		
+		"""
+		Modifies secondary settings of the system.
+		"""
+		modifySecondarySettings(newSettings: [String!]!): 
+		Boolean @authenticated
+		
+		"""
+		Modifies AI theming settings.
+		"""
+		modifyAITheming(prompt: String!): Boolean @authenticated @role(
+		roles: [STUDENT, AI_SUPERVISOR, TECH_SUPPORT])
+		
+		"""
+		Adds new roles to the user.
+		"""
+		addUserRoles(newRoles: [UserRole!]!): Boolean @authenticated
+		
+		"""
+		Removes roles from the user.
+		"""
+		removeUserRoles(oldRoles: [UserRole!]!): Boolean @authenticated
+	}
+	
+	"""
+	Directive to restrict access to authenticated users.
+	"""
+	directive @authenticated on FIELD_DEFINITION
+	
+	"""
+	Directive to restrict access based on user roles.
+	"""
+	directive @role(
+	"""
+	The roles allowed to access the field or object.
+	"""
+	roles: [UserRole!]!
+	) on FIELD_DEFINITION | OBJECT 
+\end{minted}
+
+\subsubsection{Course}
+\begin{minted}{python}
+	schema {
+		query: Query
+		mutation: Mutation
+	}
+	
+	"""
+	Root Query for fetching course data.
+	"""
+	type Query {
+		"""
+		View a specific course by its ID.
+		"""
+		viewCourse(id: ID!): Course @role(roles: [STUDENT, PROFESSOR, 
+		PUBLISHER, DEVELOPER, AI_SUPERVISOR, TECH_SUPPORT, 
+		COURSE_SUPERVISOR, SYSTEM_ADMIN])
+		
+		"""
+		List all available courses.
+		"""
+		listCourses: [Course] @role(roles: [STUDENT, PROFESSOR, 
+		PUBLISHER, DEVELOPER, AI_SUPERVISOR, TECH_SUPPORT, 
+		COURSE_SUPERVISOR, SYSTEM_ADMIN])
+	}
+	
+	"""
+	Root Mutation for modifying course data.
+	"""
+	type Mutation {
+		"""
+		Create a new course.
+		"""
+		createCourse(input: CreateCourseInput!): CourseResponse @role(
+		roles: [COURSE_SUPERVISOR, SYSTEM_ADMIN])
+		
+		"""
+		Modify an existing course.
+		"""
+		modifyCourse(input: ModifyCourseInput!): CourseResponse @role(
+		roles: [COURSE_SUPERVISOR, SYSTEM_ADMIN])
+		
+		"""
+		Delete a course by its ID.
+		"""
+		deleteCourse(id: ID!): DeleteCourseResponse @role(roles: 
+		[COURSE_SUPERVISOR, SYSTEM_ADMIN])
+		
+		"""
+		Archive a course by its ID.
+		"""
+		archiveCourse(id: ID!): ArchiveCourseResponse @role(roles: 
+		[COURSE_SUPERVISOR, SYSTEM_ADMIN])
+		
+		"""
+		Add a review to a course.
+		"""
+		reviewCourse(input: ReviewCourseInput!): ReviewResponse @role(
+		roles: [STUDENT, PROFESSOR])
+		
+		"""
+		Remove a review from a course.
+		"""
+		removeReview(courseId: ID!, reviewId: ID!): RemoveReviewResponse 
+		@role(roles: [SYSTEM_ADMIN])
+	}
+	
+	"""
+	Input type for creating a new course.
+	"""
+	input CreateCourseInput {
+		title: String!
+		description: String!
+		content: String!
+		authorId: ID!
+		isDraft: Boolean
+	}
+	
+	"""
+	Input type for modifying an existing course.
+	"""
+	input ModifyCourseInput {
+		id: ID!
+		title: String
+		description: String
+		content: String
+		isDraft: Boolean
+	}
+	
+	"""
+	Response type for course-related mutations.
+	"""
+	type CourseResponse {
+		success: Boolean!
+		message: String
+		course: Course
+	}
+	
+	"""
+	Response type for deleting a course.
+	"""
+	type DeleteCourseResponse {
+		success: Boolean!
+		message: String
+	}
+	
+	"""
+	Response type for archiving a course.
+	"""
+	type ArchiveCourseResponse {
+		success: Boolean!
+		message: String
+	}
+	
+	"""
+	Input type for adding a review to a course.
+	"""
+	input ReviewCourseInput {
+		courseId: ID!
+		review: String!
+		reviewerId: ID!
+	}
+	
+	"""
+	Response type for review-related mutations.
+	"""
+	type ReviewResponse {
+		success: Boolean!
+		message: String
+		review: Review
+	}
+	
+	"""
+	Response type for removing a review.
+	"""
+	type RemoveReviewResponse {
+		success: Boolean!
+		message: String
+	}
+	
+	"""
+	Representation of a course.
+	"""
+	type Course {
+		id: ID!
+		title: String!
+		description: String!
+		content: String!
+		author: User!
+		isDraft: Boolean!
+		isArchived: Boolean!
+		createdAt: String!
+		updatedAt: String!
+		reviews: [Review!]
+		globalRanking: Float
+	}
+	
+	"""
+	Representation of a review.
+	"""
+	type Review {
+		id: ID!
+		content: String!
+		reviewer: User!
+		createdAt: String!
+	}
+	
+\end{minted}
+
+\subsubsection{Class}
+\begin{minted}{python}
+	schema {
+		query: Query
+		mutation: Mutation
+	}
+	
+	"""
+	Root Query for fetching class data.
+	"""
+	type Query {
+		"""
+		View a specific class by its ID.
+		"""
+		viewClass(id: ID!): Class @role(roles: 
+		[STUDENT, PROFESSOR, PUBLISHER, DEVELOPER, AI_SUPERVISOR, 
+		TECH_SUPPORT, COURSE_SUPERVISOR, SYSTEM_ADMIN])
+		
+		"""
+		List all available classes.
+		"""
+		listClasses: [Class] @role(roles: 
+		[STUDENT, PROFESSOR, PUBLISHER, DEVELOPER, AI_SUPERVISOR, 
+		TECH_SUPPORT, COURSE_SUPERVISOR, SYSTEM_ADMIN])
+		
+		"""
+		Display attendees of a specific class.
+		"""
+		displayClassAttendees(classId: ID!): [User] @role(roles: 
+		[STUDENT, PROFESSOR])
+		
+		"""
+		Display performance statistics for a specific class.
+		"""
+		displayClassStatistics(classId: ID!): ClassStatistics @role(roles: 
+		[PROFESSOR])
+	}
+	
+	"""
+	Root Mutation for modifying class data.
+	"""
+	type Mutation {
+		"""
+		Create a new class.
+		"""
+		createClass(input: CreateClassInput!): ClassResponse @role(roles: 
+		[PROFESSOR])
+		
+		"""
+		Modify an existing class.
+		"""
+		modifyClass(input: ModifyClassInput!): ClassResponse @role(roles: 
+		[PROFESSOR, SYSTEM_ADMIN])
+		
+		"""
+		Terminate a class by its ID.
+		"""
+		terminateClass(id: ID!): TerminateClassResponse @role(roles: 
+		[PROFESSOR, SYSTEM_ADMIN])
+		
+		"""
+		Archive a class by its ID.
+		"""
+		archiveClass(id: ID!): ArchiveClassResponse @role(roles: 
+		[PROFESSOR, SYSTEM_ADMIN])
+		
+		"""
+		Join a class.
+		"""
+		joinClass(classId: ID!, studentId: ID!): JoinClassResponse @role(
+		roles: [STUDENT])
+		
+		"""
+		Leave a class.
+		"""
+		leaveClass(classId: ID!, studentId: ID!): LeaveClassResponse @role(
+		roles: [STUDENT])
+	}
+	
+	"""
+	Input type for creating a new class.
+	"""
+	input CreateClassInput {
+		title: String!
+		description: String!
+		professorId: ID!
+		studentIds: [ID!]
+	}
+	
+	"""
+	Input type for modifying an existing class.
+	"""
+	input ModifyClassInput {
+		id: ID!
+		title: String
+		description: String
+		studentIds: [ID!]
+	}
+	
+	"""
+	Response type for class-related mutations.
+	"""
+	type ClassResponse {
+		success: Boolean!
+		message: String
+		class: Class
+	}
+	
+	"""
+	Response type for terminating a class.
+	"""
+	type TerminateClassResponse {
+		success: Boolean!
+		message: String
+	}
+	
+	"""
+	Response type for archiving a class.
+	"""
+	type ArchiveClassResponse {
+		success: Boolean!
+		message: String
+	}
+	
+	"""
+	Response type for joining a class.
+	"""
+	type JoinClassResponse {
+		success: Boolean!
+		message: String
+	}
+	
+	"""
+	Response type for leaving a class.
+	"""
+	type LeaveClassResponse {
+		success: Boolean!
+		message: String
+	}
+	
+	"""
+	Representation of a class.
+	"""
+	type Class {
+		id: ID!
+		title: String!
+		description: String!
+		professor: User!
+		students: [User!]
+		isArchived: Boolean!
+		createdAt: String!
+		updatedAt: String!
+	}
+	
+	"""
+	Statistics for a class.
+	"""
+	type ClassStatistics {
+		classId: ID!
+		averageScore: Float
+		numberOfStudents: Int
+	}
+	
+\end{minted}
+
+\subsubsection{Article}
+\begin{minted}{python}
+	schema {
+		query: Query
+		mutation: Mutation
+	}
+	
+	"""
+	Root Query for fetching article data.
+	"""
+	type Query {
+		"""
+		View a specific article by its ID.
+		"""
+		viewArticle(id: ID!): Article @role(roles: 
+		[STUDENT, PROFESSOR, PUBLISHER, DEVELOPER, AI_SUPERVISOR, 
+		TECH_SUPPORT, COURSE_SUPERVISOR, SYSTEM_ADMIN])
+		
+		"""
+		List all available articles.
+		"""
+		listArticles: [Article] @role(roles: 
+		[STUDENT, PROFESSOR, PUBLISHER, DEVELOPER, AI_SUPERVISOR, 
+		TECH_SUPPORT, COURSE_SUPERVISOR, SYSTEM_ADMIN])
+	}
+	
+	"""
+	Root Mutation for modifying article data.
+	"""
+	type Mutation {
+		"""
+		Create a new article.
+		"""
+		createArticle(input: CreateArticleInput!): ArticleResponse @role(
+		roles: [PUBLISHER])
+		
+		"""
+		Modify an existing article.
+		"""
+		modifyArticle(input: ModifyArticleInput!): ArticleResponse @role(
+		roles: [PUBLISHER, COURSE_SUPERVISOR, SYSTEM_ADMIN])
+		
+		"""
+		Delete an article by its ID.
+		"""
+		deleteArticle(id: ID!): DeleteArticleResponse @role(roles: 
+		[PUBLISHER, COURSE_SUPERVISOR, SYSTEM_ADMIN])
+		
+		"""
+		Archive an article by its ID.
+		"""
+		archiveArticle(id: ID!): ArchiveArticleResponse @role(roles: 
+		[PUBLISHER, COURSE_SUPERVISOR, SYSTEM_ADMIN])
+		
+		"""
+		Add a review to an article.
+		"""
+		reviewArticle(input: ReviewArticleInput!): ReviewResponse @role(
+		roles: [STUDENT, PROFESSOR])
+		
+		"""
+		Remove a review from an article.
+		"""
+		removeReview(articleId: ID!, reviewId: ID!): RemoveReviewResponse 
+		@role(roles: [SYSTEM_ADMIN])
+	}
+	
+	"""
+	Input type for creating a new article.
+	"""
+	input CreateArticleInput {
+		title: String!
+		content: String!
+		authorId: ID!
+	}
+	
+	"""
+	Input type for modifying an existing article.
+	"""
+	input ModifyArticleInput {
+		id: ID!
+		title: String
+		content: String
+	}
+	
+	"""
+	Response type for article-related mutations.
+	"""
+	type ArticleResponse {
+		success: Boolean!
+		message: String
+		article: Article
+	}
+	
+	"""
+	Response type for deleting an article.
+	"""
+	type DeleteArticleResponse {
+		success: Boolean!
+		message: String
+	}
+	
+	"""
+	Response type for archiving an article.
+	"""
+	type ArchiveArticleResponse {
+		success: Boolean!
+		message: String
+	}
+	
+	"""
+	Input type for adding a review to an article.
+	"""
+	input ReviewArticleInput {
+		articleId: ID!
+		review: String!
+		reviewerId: ID!
+	}
+	
+	"""
+	Response type for review-related mutations.
+	"""
+	type ReviewResponse {
+		success: Boolean!
+		message: String
+		review: Review
+	}
+	
+	"""
+	Response type for removing a review.
+	"""
+	type RemoveReviewResponse {
+		success: Boolean!
+		message: String
+	}
+	
+	"""
+	Representation of an article.
+	"""
+	type Article {
+		id: ID!
+		title: String!
+		content: String!
+		author: User!
+		createdAt: String!
+		updatedAt: String!
+		reviews: [Review!]
+	}
+	
+	"""
+	Representation of a review.
+	"""
+	type Review {
+		id: ID!
+		content: String!
+		reviewer: User!
+		createdAt: String!
+	}
+\end{minted}
+
+\subsubsection{Payment}
+\begin{minted}{python}
+	schema {
+		mutation: Mutation
+	}
+	
+	"""
+	Root Mutation for handling payments.
+	"""
+	type Mutation {
+		"""
+		Pay a developer for their work.
+		"""
+		payDeveloper(input: PayDeveloperInput!): PayDeveloperResponse 
+		@role(roles: [SYSTEM_ADMIN])
+	}
+	
+	"""
+	Input type for paying a developer.
+	"""
+	input PayDeveloperInput {
+		developerId: ID!
+		amount: Float!
+		paymentMethod: String!
+	}
+	
+	"""
+	Response type for payment-related mutations.
+	"""
+	type PayDeveloperResponse {
+		success: Boolean!
+		message: String
+	}
+\end{minted}
+
+\subsubsection{Library}
+\begin{minted}{python}
+	schema {
+		query: Query
+	}
+	
+	"""
+	Root Query for searching library materials.
+	"""
+	type Query {
+		"""
+		Search for materials in the library.
+		"""
+		searchMaterial(input: SearchMaterialInput!): [SearchResult] 
+		@role(roles: [STUDENT, PROFESSOR, PUBLISHER, DEVELOPER, 
+		AI_SUPERVISOR, TECH_SUPPORT, COURSE_SUPERVISOR, SYSTEM_ADMIN])
+	}
+	
+	"""
+	Input type for searching library materials.
+	"""
+	input SearchMaterialInput {
+		query: String!
+		type: String
+	}
+	
+	"""
+	Representation of a search result.
+	"""
+	type SearchResult {
+		id: ID!
+		title: String!
+		type: String!
+		description: String
+	}
+\end{minted}
+
+\subsubsection{Minigame}
+\begin{minted}{python}
+	schema {
+		query: Query
+		mutation: Mutation
+	}
+	
+	"""
+	Root Query for fetching minigame data.
+	"""
+	type Query {
+		"""
+		View a specific minigame by its ID.
+		"""
+		viewMinigame(id: ID!): Minigame @role(roles: [STUDENT, PROFESSOR, 
+		DEVELOPER, COURSE_SUPERVISOR, SYSTEM_ADMIN])
+		
+		"""
+		List all available minigames.
+		"""
+		listMinigames: [Minigame] @role(roles: [STUDENT, PROFESSOR, 
+		DEVELOPER, COURSE_SUPERVISOR, SYSTEM_ADMIN])
+	}
+	
+	"""
+	Root Mutation for modifying minigame data.
+	"""
+	type Mutation {
+		"""
+		Create a new minigame.
+		"""
+		createMinigame(input: CreateMinigameInput!): MinigameResponse 
+		@role(roles: [DEVELOPER])
+		
+		"""
+		Modify an existing minigame.
+		"""
+		modifyMinigame(input: ModifyMinigameInput!): MinigameResponse 
+		@role(roles: [DEVELOPER])
+		
+		"""
+		Delete a minigame by its ID.
+		"""
+		deleteMinigame(id: ID!): DeleteMinigameResponse @role(roles: 
+		[DEVELOPER, SYSTEM_ADMIN])
+		
+		"""
+		Archive a minigame by its ID.
+		"""
+		archiveMinigame(id: ID!): ArchiveMinigameResponse @role(roles: 
+		[DEVELOPER, SYSTEM_ADMIN])
+		
+		"""
+		Register a minigame for a course by a developer.
+		"""
+		registerMinigameFromDeveloper(input: RegisterMinigameFromDeveloperInput!): 
+		RegisterMinigameResponse @role(roles: [DEVELOPER])
+		
+		"""
+		Register a minigame for a course by an observer.
+		"""
+		registerMinigameFromObserver(input: RegisterMinigameFromObserverInput!): 
+		RegisterMinigameResponse @role(roles: [PROFESSOR, COURSE_SUPERVISOR])
+		
+		"""
+		Play a minigame.
+		"""
+		playMinigame(id: ID!): PlayMinigameResponse @role(roles: [STUDENT, 
+		PROFESSOR])
+	}
+	
+	"""
+	Input type for creating a new minigame.
+	"""
+	input CreateMinigameInput {
+		title: String!
+		content: String!
+		developerId: ID!
+	}
+	
+	"""
+	Input type for modifying an existing minigame.
+	"""
+	input ModifyMinigameInput {
+		id: ID!
+		title: String
+		content: String
+	}
+	
+	"""
+	Response type for minigame-related mutations.
+	"""
+	type MinigameResponse {
+		success: Boolean!
+		message: String
+		minigame: Minigame
+	}
+	
+	"""
+	Response type for deleting a minigame.
+	"""
+	type DeleteMinigameResponse {
+		success: Boolean!
+		message: String
+	}
+	
+	"""
+	Response type for archiving a minigame.
+	"""
+	type ArchiveMinigameResponse {
+		success: Boolean!
+		message: String
+	}
+	
+	"""
+	Input type for registering a minigame by a developer.
+	"""
+	input RegisterMinigameFromDeveloperInput {
+		minigameId: ID!
+		courseId: ID!
+	}
+	
+	"""
+	Input type for registering a minigame by an observer.
+	"""
+	input RegisterMinigameFromObserverInput {
+		minigameId: ID!
+		courseId: ID!
+	}
+	
+	"""
+	Response type for registering a minigame.
+	"""
+	type RegisterMinigameResponse {
+		success: Boolean!
+		message: String
+	}
+	
+	"""
+	Response type for playing a minigame.
+	"""
+	type PlayMinigameResponse {
+		success: Boolean!
+		message: String
+	}
+	
+	"""
+	Representation of a minigame.
+	"""
+	type Minigame {
+		id: ID!
+		title: String!
+		content: String!
+		developer: User!
+		createdAt: String!
+		updatedAt: String!
+	}
+\end{minted}
+
+\subsubsection{Ranking}
+\begin{minted}{python}
+	schema {
+		query: Query
+		mutation: Mutation
+	}
+	
+	"""
+	Root Query for fetching ranking data.
+	"""
+	type Query {
+		"""
+		Get a specific ranking by its ID.
+		"""
+		getRanking(id: ID!): Ranking @role(roles: 
+		[STUDENT, PROFESSOR, COURSE_SUPERVISOR, SYSTEM_ADMIN])
+		
+		"""
+		List all rankings.
+		"""
+		getRankings: [Ranking] @role(roles: 
+		[STUDENT, PROFESSOR, COURSE_SUPERVISOR, SYSTEM_ADMIN])
+	}
+	
+	"""
+	Root Mutation for modifying ranking data.
+	"""
+	type Mutation {
+		"""
+		Add a new ranking.
+		"""
+		addRanking(input: AddRankingInput!): RankingResponse @role(roles: 
+		[SYSTEM_ADMIN])
+		
+		"""
+		Update an existing ranking.
+		"""
+		updateRanking(input: UpdateRankingInput!): RankingResponse
+		@role(roles: [SYSTEM_ADMIN])
+		
+		"""
+		Delete a ranking by its ID.
+		"""
+		deleteRanking(id: ID!): DeleteRankingResponse @role(roles: 
+		[SYSTEM_ADMIN])
+	}
+	
+	"""
+	Input type for adding a new ranking.
+	"""
+	input AddRankingInput {
+		userId: ID!
+		courseId: ID!
+		score: Float!
+	}
+	
+	"""
+	Input type for updating an existing ranking.
+	"""
+	input UpdateRankingInput {
+		id: ID!
+		score: Float!
+	}
+	
+	"""
+	Response type for ranking-related mutations.
+	"""
+	type RankingResponse {
+		success: Boolean!
+		message: String
+		ranking: Ranking
+	}
+	
+	"""
+	Response type for deleting a ranking.
+	"""
+	type DeleteRankingResponse {
+		success: Boolean!
+		message: String
+	}
+	
+	"""
+	Representation of a ranking.
+	"""
+	type Ranking {
+		id: ID!
+		user: User!
+		course: Course!
+		score: Float!
+		createdAt: String!
+		updatedAt: String!
+	}
+\end{minted}
+
+\subsubsection{Chat}
+\begin{minted}{python}
+	schema {
+		mutation: Mutation
+	}
+	
+	"""
+	Root Mutation for handling chat interactions.
+	"""
+	type Mutation {
+		"""
+		Use tech support chat.
+		"""
+		useTechSupportChat(input: TechSupportChatInput!): 
+		TechSupportChatResponse @role(roles: [TECH_SUPPORT])
+		
+		"""
+		Use development chat.
+		"""
+		useDevelopmentChat(input: DevelopmentChatInput!): 
+		DevelopmentChatResponse @role(roles: [DEVELOPER])
+	}
+	
+	"""
+	Input type for tech support chat interactions.
+	"""
+	input TechSupportChatInput {
+		userId: ID!
+		message: String!
+	}
+	
+	"""
+	Response type for tech support chat.
+	"""
+	type TechSupportChatResponse {
+		success: Boolean!
+		message: String
+	}
+	
+	"""
+	Input type for development chat interactions.
+	"""
+	input DevelopmentChatInput {
+		developerId: ID!
+		message: String!
+	}
+	
+	"""
+	Response type for development chat.
+	"""
+	type DevelopmentChatResponse {
+		success: Boolean!
+		message: String
+	}
+\end{minted}
