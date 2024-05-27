@@ -200,4 +200,62 @@
 		\item Defect Resolution: Collaborate with development teams to investigate, triage, and resolve reported defects promptly, following established workflows and communication channels.
 	\end{itemize}
 
+
+\subsection{Test cases template}
+
+Providing here the base test cases table, where each iteration will define more test cases.
+
+
+\begin{longtable}{|c|m{1.5cm}|m{2.5cm}|m{2.5cm}|m{1.5cm}|m{2.5cm}|m{1.5cm}|m{1.5cm}|}
+	\hline
+	N. & Description & Test case data & Precondition & Dep. & Expected result & Actual result & Notes \\ \hline
+	\endhead
+	%
+	0 & Login with unregisted user & Go to login page; insert username and password &  &  & A message is displayed "Invalid username or password". The login page is reload. &  &  \\ \hline
+	1.1 & Register new user successfully & Go to login page; and insert firstname, lastname, email, username and password &  &  & A message is displayed "User created successfully". The dashboard is loaded. &  &  \\ \hline
+	1.2 & Register new user failed & Go to login page; and insert firstname, lastname, email, username and password & - email or username is already used by another user. &  & A message is displayed "Email or username is not available". &  &  \\ \hline
+	2.1 & Login with registed user successfully & Go to login page; insert username and password & user has already registerd &  & A message is displayed "Login successfully. Welcome back \{username\}". The dashboard is loaded. &  &  \\ \hline
+	2.2 & Wrong password & Go to login page; insert username and wrong password &  &  & A message is displayed "Wrong password, please try again". &  &  \\ \hline
+	2.3 & Login with empty or wrong username & Go to login page; insert wrong username &  &  & A message is displayed "Invalid username, please try again". &  &  \\ \hline
+	3.1 & Logout successfully & Click Logout button & user has already logged in &  & A message is displayed "Logout successfully". The login page is reload. &  &  \\ \hline
+	4.1 & Credential recovery & Go to "Recover" insert email &  &  & A message is displayed "An email with recovery info has been sent to your email". Send an email with credential info to the user email. The login page is reload. &  &  \\ \hline
+	5.1 & Delete account & In Account Management, click "Delete Account"; insert password; click "Yes, I'm sure to delete my account" & user has already logged in &  & A form for user to choose the reasons why the user want to delete account displayed. The account deleted. The login page is reload. &  &  \\ \hline
+	6.1 & Modify account successfully & In Account Management, click "Modify Account"; insert password; modify the allowed field & user has already logged in &  & A message is displayed "Modified successfully". The dashboard is reload. &  &  \\ \hline
+	6.2 & Modify account failed & In Account Management, click "Modify Account"; insert password; leave any field empty & user has already logged in &  & A message is displayed "Modified not successfully". The dashboard is reload. &  &  \\ \hline
+	7.1 & Modify secondary settings successfully & In Setting, modify secondary settings (e.g. theme, layout,...) & user has already logged in &  & A message is displayed "Modified successfully". The dashboard is reload. &  &  \\ \hline
+	8.1 & Modify AI theming successfully & In AI theming option, inputs a prompt, confirm the modification & user has already logged in &  & A message is displayed "Modified AI theming successfully". The dashboard is reload. &  &  \\ \hline
+	9.1 & Access profile and statistics & Selects the account display option & user has already logged in &  & The profile with all its statistics is displayed &  &  \\ \hline
+	10.1 & Change user role & In "User Role" panel, select one of the allowed user roles & user has already logged in &  & The user role changed following by his dashboard role. &  &  \\ \hline
+	11.1 & Create course & In "Course" panel, select "Create new course", fill the mandatory sections, click "Create new course" final button & user has already logged in, has the right to modify course &  & Course editor displayed "New course has been created" &  &  \\ \hline
+	11.2 & Modify course & In "Course" panel, select "Modify course", fill the mandatory sections, click "Modify course" final button & user has already logged in, has the right to modify course &  & Course editor displayed "Course \{name\} has been modified" &  &  \\ \hline
+	11.3 & Delete course & In "Course" panel, select "Modify course", click "delete course" & user has already logged in, has the right to modify course &  & Course editor displayed "Course \{name\} has been deleted" &  &  \\ \hline
+	11.4 & Archive course & In "Course" panel, select "Modify course", click "Archive course" & user has already logged in, has the right to modify course &  & Course editor displayed "Course \{name\} has been archived" &  &  \\ \hline
+	11.5 & View course & Select course from the dashboard & user has already logged in, has the right to access course &  & The course is displayed, along with the global rank-\\ ing if any minigame is present &  &  \\ \hline
+	11.6 & Review course & Select course from the dashboard, leave a review (comment) for the\\ course & user has already logged in, has the right to access course &  & The review is added to the course &  &  \\ \hline
+	12.1 & Create class & In "Class" panel, select "Create new Class", fill the mandatory sections, click "Create new Class" final button & user has already logged in, has the right to modify Class &  & Class editor displayed "New Class has been created" &  &  \\ \hline
+	12.2 & Modify class & In "Class" panel, select "Modify Class", fill the mandatory sections, click "Modify Class" final button & user has already logged in, has the right to modify Class &  & Class editor displayed "Class \{name\} has been modified" &  &  \\ \hline
+	12.2 & Terminate class & In "Class" panel, select "Modify Class", click "Terminate Class" final button & user has already logged in, has the right to modify Class &  & Class editor displayed "Class \{name\} has been terminated" &  &  \\ \hline
+	12.3 & Archive class & In "Class" panel, select "Modify Class", click "Archive Class" & user has already logged in, has the right to modify Class &  & Class editor displayed "Class \{name\} has been archived" &  &  \\ \hline
+	12.4 & View class & Selects a class from the dashboard or from an invitation & user has already logged in, has the right to access Class &  & The public information of the class is displayed &  &  \\ \hline
+	12.5 & Display class’ attendees & Selects a class user enrolled into & user has already logged in, has a class enrolled &  & The list of people attending the class is displayed &  &  \\ \hline
+	12.5 & Display class’ statistics & Selects a class user manage & user has already logged in, has the right to modify Class &  & The performance and statistics of all the attendees is displayed &  &  \\ \hline
+	12.6 & Join class & Selects “Join class” option from dashboard or an invitation & The user is registered, logged in and has the right\\ to join the class. Moreover the class is opened and\\ public &  & The information of the class is displayed &  &  \\ \hline
+	12.7 & Leave class & Selects “leave class” option from Class panel & The user is registered, logged in and is part of a\\ class &  & Display message "Leave class successfully". The dashboard is reload. &  &  \\ \hline
+	13.1 & Publish article & In "Article" panel, select "Create new article", fill the mandatory sections, click "Create new article" final button & user has already logged in, has the right to modify article &  & Aricle editor displayed "New article has been published" &  &  \\ \hline
+	13.2 & Modify article & In "Article" panel, select "Modify Article", fill the mandatory sections, click "Modify Article" final button & user has already logged in, has the right to modify Article &  & Article editor displayed "Article \{name\} has been modified" &  &  \\ \hline
+	13.3 & Delete article & In "Article" panel, select "Modify Article", click "delete Article" & user has already logged in, has the right to modify Article &  & Article editor displayed "Article \{name\} has been deleted" &  &  \\ \hline
+	13.4 & Archive article & In "Article" panel, select "Modify Article", click "Archive Article" & user has already logged in, has the right to modify Article &  & Article editor displayed "Article \{name\} has been archived" &  &  \\ \hline
+	13.5 & View article & Select Article from the dashboard & user has already logged in, has the right to access Article &  & The Article is displayed &  &  \\ \hline
+	13.6 & Review article & Select Article from the dashboard, leave a review (comment) for the\\ Article & user has already logged in &  & The review is added to the Article &  &  \\ \hline
+	14.1 & Create minigame & In "Minigame" panel, select "Create new minigame", fill the mandatory sections, click "Create new minigame" final button & user has already logged in, has the right to modify minigame &  & Minigame editor displayed "New minigame has been created" &  &  \\ \hline
+	14.2 & Modify minigame & In "Minigame" panel, select "Modify Minigame", fill the mandatory sections, click "Modify Minigame" final button & user has already logged in, has the right to modify Minigame &  & Minigame editor displayed "Minigame \{name\} has been modified" &  &  \\ \hline
+	14.3 & Delete minigame & In "Minigame" panel, select "Modify Minigame", click "delete Minigame" & user has already logged in, has the right to modify Minigame &  & Minigame editor displayed "Minigame \{name\} has been deleted" &  &  \\ \hline
+	14.4 & Archive minigame & In "Minigame" panel, select "Modify Minigame", click "Archive Minigame" & user has already logged in, has the right to modify Minigame &  & Minigame editor displayed "Minigame \{name\} has been archived" &  &  \\ \hline
+	14.5 & Register minigame from developer & In "Minigame" panel, select "Register minigame to\\ course", select a course, fill mandatory sections, click Accept & user has already logged in, has the right to modify Minigame &  & Minigame editor displayed "Minigame \{name\} is register successfully to the\\ course(s)" &  &  \\ \hline
+	15.1 & Pay developer & Select Payment option & user has already logged in and has tasked a\\ developer with a minigame &  & A message displayed "Payment successfully" &  &  \\ \hline
+	16.1 & Chat with tech support & Select "Chat with supporter" & \cellcolor[HTML]{FFFFFF}user has already logged &  & Chat box is appeared &  &  \\ \hline
+	17.1 & Chat with developer & Select "Chat with developer" & \cellcolor[HTML]{FFFFFF}user has already logged &  & Chat box is appeared &  &  \\ \hline
+	18.1 & Search material & Select Search box, search for a keyword & \cellcolor[HTML]{FFFFFF}user has already logged &  & Dashboard updated with materials user search for &  &  \\ \hline
+	19.1 & Remove review & Remove review from any material & \cellcolor[HTML]{FFFFFF}user has already logged, made a review &  & A message displayed "Review removed successfully" &  &  \\ \hline
+	\end{longtable}
 		
