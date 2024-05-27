@@ -1,0 +1,9 @@
+version: '3'
+services:
+  radiantiq-account-service:
+    image: radiantiq-account-service
+    container_name: radiantiq-account-service
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    

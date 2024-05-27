@@ -1,0 +1,9 @@
+version: '3'
+services:
+  radiantiq-course-service:
+    image: radiantiq-course-service
+    container_name: radiantiq-course-service
+    restart: unless-stopped
+    ports:
+      - "3004:3004"
+    

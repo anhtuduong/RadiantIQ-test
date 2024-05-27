@@ -1,0 +1,9 @@
+version: '3'
+services:
+  radiantiq-minigame-service:
+    image: radiantiq-minigame-service
+    container_name: radiantiq-minigame-service
+    restart: unless-stopped
+    ports:
+      - "3006:3006"
+    
