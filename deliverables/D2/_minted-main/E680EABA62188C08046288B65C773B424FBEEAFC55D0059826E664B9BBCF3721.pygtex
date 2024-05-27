@@ -1,0 +1,33 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n}{schema} \PYG{p}{\PYGZob{}}
+		\PYG{n}{mutation}\PYG{p}{:} \PYG{n}{Mutation}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Root Mutation for handling payments.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{Mutation} \PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Pay a developer for their work.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{payDeveloper}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{:} \PYG{n}{PayDeveloperInput}\PYG{err}{!}\PYG{p}{):} \PYG{n}{PayDeveloperResponse}
+		\PYG{n+nd}{@role}\PYG{p}{(}\PYG{n}{roles}\PYG{p}{:} \PYG{p}{[}\PYG{n}{SYSTEM\PYGZus{}ADMIN}\PYG{p}{])}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Input type for paying a developer.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{input} \PYG{n}{PayDeveloperInput} \PYG{p}{\PYGZob{}}
+		\PYG{n}{developerId}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}
+		\PYG{n}{amount}\PYG{p}{:} \PYG{n}{Float}\PYG{err}{!}
+		\PYG{n}{paymentMethod}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Response type for payment\PYGZhy{}related mutations.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{PayDeveloperResponse} \PYG{p}{\PYGZob{}}
+		\PYG{n}{success}\PYG{p}{:} \PYG{n}{Boolean}\PYG{err}{!}
+		\PYG{n}{message}\PYG{p}{:} \PYG{n}{String}
+	\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

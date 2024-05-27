@@ -1,0 +1,163 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n}{schema} \PYG{p}{\PYGZob{}}
+		\PYG{n}{query}\PYG{p}{:} \PYG{n}{Query}
+		\PYG{n}{mutation}\PYG{p}{:} \PYG{n}{Mutation}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Root Query for fetching class data.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{Query} \PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		View a specific class by its ID.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{viewClass}\PYG{p}{(}\PYG{n+nb}{id}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}\PYG{p}{):} \PYG{n}{Class} \PYG{n+nd}{@role}\PYG{p}{(}\PYG{n}{roles}\PYG{p}{:}
+		\PYG{p}{[}\PYG{n}{STUDENT}\PYG{p}{,} \PYG{n}{PROFESSOR}\PYG{p}{,} \PYG{n}{PUBLISHER}\PYG{p}{,} \PYG{n}{DEVELOPER}\PYG{p}{,} \PYG{n}{AI\PYGZus{}SUPERVISOR}\PYG{p}{,}
+		\PYG{n}{TECH\PYGZus{}SUPPORT}\PYG{p}{,} \PYG{n}{COURSE\PYGZus{}SUPERVISOR}\PYG{p}{,} \PYG{n}{SYSTEM\PYGZus{}ADMIN}\PYG{p}{])}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		List all available classes.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{listClasses}\PYG{p}{:} \PYG{p}{[}\PYG{n}{Class}\PYG{p}{]} \PYG{n+nd}{@role}\PYG{p}{(}\PYG{n}{roles}\PYG{p}{:}
+		\PYG{p}{[}\PYG{n}{STUDENT}\PYG{p}{,} \PYG{n}{PROFESSOR}\PYG{p}{,} \PYG{n}{PUBLISHER}\PYG{p}{,} \PYG{n}{DEVELOPER}\PYG{p}{,} \PYG{n}{AI\PYGZus{}SUPERVISOR}\PYG{p}{,}
+		\PYG{n}{TECH\PYGZus{}SUPPORT}\PYG{p}{,} \PYG{n}{COURSE\PYGZus{}SUPERVISOR}\PYG{p}{,} \PYG{n}{SYSTEM\PYGZus{}ADMIN}\PYG{p}{])}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Display attendees of a specific class.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{displayClassAttendees}\PYG{p}{(}\PYG{n}{classId}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}\PYG{p}{):} \PYG{p}{[}\PYG{n}{User}\PYG{p}{]} \PYG{n+nd}{@role}\PYG{p}{(}\PYG{n}{roles}\PYG{p}{:}
+		\PYG{p}{[}\PYG{n}{STUDENT}\PYG{p}{,} \PYG{n}{PROFESSOR}\PYG{p}{])}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Display performance statistics for a specific class.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{displayClassStatistics}\PYG{p}{(}\PYG{n}{classId}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}\PYG{p}{):} \PYG{n}{ClassStatistics} \PYG{n+nd}{@role}\PYG{p}{(}\PYG{n}{roles}\PYG{p}{:}
+		\PYG{p}{[}\PYG{n}{PROFESSOR}\PYG{p}{])}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Root Mutation for modifying class data.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{Mutation} \PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Create a new class.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{createClass}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{:} \PYG{n}{CreateClassInput}\PYG{err}{!}\PYG{p}{):} \PYG{n}{ClassResponse} \PYG{n+nd}{@role}\PYG{p}{(}\PYG{n}{roles}\PYG{p}{:}
+		\PYG{p}{[}\PYG{n}{PROFESSOR}\PYG{p}{])}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Modify an existing class.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{modifyClass}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{:} \PYG{n}{ModifyClassInput}\PYG{err}{!}\PYG{p}{):} \PYG{n}{ClassResponse} \PYG{n+nd}{@role}\PYG{p}{(}\PYG{n}{roles}\PYG{p}{:}
+		\PYG{p}{[}\PYG{n}{PROFESSOR}\PYG{p}{,} \PYG{n}{SYSTEM\PYGZus{}ADMIN}\PYG{p}{])}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Terminate a class by its ID.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{terminateClass}\PYG{p}{(}\PYG{n+nb}{id}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}\PYG{p}{):} \PYG{n}{TerminateClassResponse} \PYG{n+nd}{@role}\PYG{p}{(}\PYG{n}{roles}\PYG{p}{:}
+		\PYG{p}{[}\PYG{n}{PROFESSOR}\PYG{p}{,} \PYG{n}{SYSTEM\PYGZus{}ADMIN}\PYG{p}{])}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Archive a class by its ID.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{archiveClass}\PYG{p}{(}\PYG{n+nb}{id}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}\PYG{p}{):} \PYG{n}{ArchiveClassResponse} \PYG{n+nd}{@role}\PYG{p}{(}\PYG{n}{roles}\PYG{p}{:}
+		\PYG{p}{[}\PYG{n}{PROFESSOR}\PYG{p}{,} \PYG{n}{SYSTEM\PYGZus{}ADMIN}\PYG{p}{])}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Join a class.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{joinClass}\PYG{p}{(}\PYG{n}{classId}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}\PYG{p}{,} \PYG{n}{studentId}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}\PYG{p}{):} \PYG{n}{JoinClassResponse} \PYG{n+nd}{@role}\PYG{p}{(}
+		\PYG{n}{roles}\PYG{p}{:} \PYG{p}{[}\PYG{n}{STUDENT}\PYG{p}{])}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Leave a class.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{leaveClass}\PYG{p}{(}\PYG{n}{classId}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}\PYG{p}{,} \PYG{n}{studentId}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}\PYG{p}{):} \PYG{n}{LeaveClassResponse} \PYG{n+nd}{@role}\PYG{p}{(}
+		\PYG{n}{roles}\PYG{p}{:} \PYG{p}{[}\PYG{n}{STUDENT}\PYG{p}{])}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Input type for creating a new class.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{input} \PYG{n}{CreateClassInput} \PYG{p}{\PYGZob{}}
+		\PYG{n}{title}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+		\PYG{n}{description}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+		\PYG{n}{professorId}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}
+		\PYG{n}{studentIds}\PYG{p}{:} \PYG{p}{[}\PYG{n}{ID}\PYG{err}{!}\PYG{p}{]}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Input type for modifying an existing class.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{input} \PYG{n}{ModifyClassInput} \PYG{p}{\PYGZob{}}
+		\PYG{n+nb}{id}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}
+		\PYG{n}{title}\PYG{p}{:} \PYG{n}{String}
+		\PYG{n}{description}\PYG{p}{:} \PYG{n}{String}
+		\PYG{n}{studentIds}\PYG{p}{:} \PYG{p}{[}\PYG{n}{ID}\PYG{err}{!}\PYG{p}{]}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Response type for class\PYGZhy{}related mutations.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{ClassResponse} \PYG{p}{\PYGZob{}}
+		\PYG{n}{success}\PYG{p}{:} \PYG{n}{Boolean}\PYG{err}{!}
+		\PYG{n}{message}\PYG{p}{:} \PYG{n}{String}
+		\PYG{n}{class}\PYG{p}{:} \PYG{n}{Class}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Response type for terminating a class.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{TerminateClassResponse} \PYG{p}{\PYGZob{}}
+		\PYG{n}{success}\PYG{p}{:} \PYG{n}{Boolean}\PYG{err}{!}
+		\PYG{n}{message}\PYG{p}{:} \PYG{n}{String}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Response type for archiving a class.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{ArchiveClassResponse} \PYG{p}{\PYGZob{}}
+		\PYG{n}{success}\PYG{p}{:} \PYG{n}{Boolean}\PYG{err}{!}
+		\PYG{n}{message}\PYG{p}{:} \PYG{n}{String}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Response type for joining a class.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{JoinClassResponse} \PYG{p}{\PYGZob{}}
+		\PYG{n}{success}\PYG{p}{:} \PYG{n}{Boolean}\PYG{err}{!}
+		\PYG{n}{message}\PYG{p}{:} \PYG{n}{String}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Response type for leaving a class.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{LeaveClassResponse} \PYG{p}{\PYGZob{}}
+		\PYG{n}{success}\PYG{p}{:} \PYG{n}{Boolean}\PYG{err}{!}
+		\PYG{n}{message}\PYG{p}{:} \PYG{n}{String}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Representation of a class.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{Class} \PYG{p}{\PYGZob{}}
+		\PYG{n+nb}{id}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}
+		\PYG{n}{title}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+		\PYG{n}{description}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+		\PYG{n}{professor}\PYG{p}{:} \PYG{n}{User}\PYG{err}{!}
+		\PYG{n}{students}\PYG{p}{:} \PYG{p}{[}\PYG{n}{User}\PYG{err}{!}\PYG{p}{]}
+		\PYG{n}{isArchived}\PYG{p}{:} \PYG{n}{Boolean}\PYG{err}{!}
+		\PYG{n}{createdAt}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+		\PYG{n}{updatedAt}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Statistics for a class.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{ClassStatistics} \PYG{p}{\PYGZob{}}
+		\PYG{n}{classId}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}
+		\PYG{n}{averageScore}\PYG{p}{:} \PYG{n}{Float}
+		\PYG{n}{numberOfStudents}\PYG{p}{:} \PYG{n}{Int}
+	\PYG{p}{\PYGZcb{}}
+	
+\end{Verbatim}

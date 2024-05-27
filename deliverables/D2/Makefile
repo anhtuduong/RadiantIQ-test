@@ -3,7 +3,7 @@ DELIV_NAME = D2-RadiantIQ-Agile-Methodology
 
 COMMON = ../common
 MAIN = main
-latex ?= TEXINPUTS=${COMMON}:${TEXINPUTS} pdflatex
+latex ?= TEXINPUTS=${COMMON}:${TEXINPUTS} pdflatex --shell-escape
 bibtex ?= bibtex
 mv ?= mv
 

@@ -1,0 +1,54 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n}{schema} \PYG{p}{\PYGZob{}}
+		\PYG{n}{mutation}\PYG{p}{:} \PYG{n}{Mutation}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Root Mutation for handling chat interactions.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{Mutation} \PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Use tech support chat.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{useTechSupportChat}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{:} \PYG{n}{TechSupportChatInput}\PYG{err}{!}\PYG{p}{):}
+		\PYG{n}{TechSupportChatResponse} \PYG{n+nd}{@role}\PYG{p}{(}\PYG{n}{roles}\PYG{p}{:} \PYG{p}{[}\PYG{n}{TECH\PYGZus{}SUPPORT}\PYG{p}{])}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Use development chat.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{useDevelopmentChat}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{:} \PYG{n}{DevelopmentChatInput}\PYG{err}{!}\PYG{p}{):}
+		\PYG{n}{DevelopmentChatResponse} \PYG{n+nd}{@role}\PYG{p}{(}\PYG{n}{roles}\PYG{p}{:} \PYG{p}{[}\PYG{n}{DEVELOPER}\PYG{p}{])}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Input type for tech support chat interactions.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{input} \PYG{n}{TechSupportChatInput} \PYG{p}{\PYGZob{}}
+		\PYG{n}{userId}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}
+		\PYG{n}{message}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Response type for tech support chat.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{TechSupportChatResponse} \PYG{p}{\PYGZob{}}
+		\PYG{n}{success}\PYG{p}{:} \PYG{n}{Boolean}\PYG{err}{!}
+		\PYG{n}{message}\PYG{p}{:} \PYG{n}{String}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Input type for development chat interactions.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{input} \PYG{n}{DevelopmentChatInput} \PYG{p}{\PYGZob{}}
+		\PYG{n}{developerId}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}
+		\PYG{n}{message}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Response type for development chat.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{DevelopmentChatResponse} \PYG{p}{\PYGZob{}}
+		\PYG{n}{success}\PYG{p}{:} \PYG{n}{Boolean}\PYG{err}{!}
+		\PYG{n}{message}\PYG{p}{:} \PYG{n}{String}
+	\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

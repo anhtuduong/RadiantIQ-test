@@ -1,0 +1,35 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n}{schema} \PYG{p}{\PYGZob{}}
+		\PYG{n}{query}\PYG{p}{:} \PYG{n}{Query}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Root Query for searching library materials.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{Query} \PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Search for materials in the library.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{searchMaterial}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{:} \PYG{n}{SearchMaterialInput}\PYG{err}{!}\PYG{p}{):} \PYG{p}{[}\PYG{n}{SearchResult}\PYG{p}{]}
+		\PYG{n+nd}{@role}\PYG{p}{(}\PYG{n}{roles}\PYG{p}{:} \PYG{p}{[}\PYG{n}{STUDENT}\PYG{p}{,} \PYG{n}{PROFESSOR}\PYG{p}{,} \PYG{n}{PUBLISHER}\PYG{p}{,} \PYG{n}{DEVELOPER}\PYG{p}{,}
+		\PYG{n}{AI\PYGZus{}SUPERVISOR}\PYG{p}{,} \PYG{n}{TECH\PYGZus{}SUPPORT}\PYG{p}{,} \PYG{n}{COURSE\PYGZus{}SUPERVISOR}\PYG{p}{,} \PYG{n}{SYSTEM\PYGZus{}ADMIN}\PYG{p}{])}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Input type for searching library materials.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{input} \PYG{n}{SearchMaterialInput} \PYG{p}{\PYGZob{}}
+		\PYG{n}{query}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+		\PYG{n+nb}{type}\PYG{p}{:} \PYG{n}{String}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Representation of a search result.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{SearchResult} \PYG{p}{\PYGZob{}}
+		\PYG{n+nb}{id}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}
+		\PYG{n}{title}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+		\PYG{n+nb}{type}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+		\PYG{n}{description}\PYG{p}{:} \PYG{n}{String}
+	\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

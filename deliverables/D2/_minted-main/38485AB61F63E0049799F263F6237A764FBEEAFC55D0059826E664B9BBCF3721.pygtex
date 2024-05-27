@@ -1,0 +1,195 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Represents a user in the system.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{User} \PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		A unique identifier for the user.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n+nb}{id}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		The username of the user.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{username}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		The roles assigned to the user.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{roles}\PYG{p}{:} \PYG{p}{[}\PYG{n}{UserRole}\PYG{err}{!}\PYG{p}{]}\PYG{err}{!}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		The first name of the user.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{name}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		The last name of the user.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{surname}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		The age of the user.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{age}\PYG{p}{:} \PYG{n}{Int}\PYG{err}{!}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		The date of birth of the user (optional).}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{dateOfBirth}\PYG{p}{:} \PYG{n}{Int}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		The gender of the user (optional).}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{gender}\PYG{p}{:} \PYG{n}{String}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		The recovery method for the user\PYGZsq{}s account.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{recoveryMethod}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Enumeration of possible user roles.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n}{enum} \PYG{n}{UserRole} \PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Student role.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{STUDENT}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Professor role.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{PROFESSOR}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Publisher role.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{PUBLISHER}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Developer role.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{DEVELOPER}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		AI Supervisor role.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{AI\PYGZus{}SUPERVISOR}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Tech Support role.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{TECH\PYGZus{}SUPPORT}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Course Supervisor role.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{COURSE\PYGZus{}SUPERVISOR}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		System Admin role.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{SYSTEM\PYGZus{}ADMIN}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Represents the payload returned after authentication.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{AuthPayload} \PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		The authentication token.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{token}\PYG{p}{:} \PYG{n}{String}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		The user object.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{user}\PYG{p}{:} \PYG{n}{User}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Root query type.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{Query} \PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Fetches the profile of the authenticated user.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{userProfile}\PYG{p}{:} \PYG{n}{User} \PYG{n+nd}{@authenticated}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Root mutation type.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{Mutation} \PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Logs a user into the system.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{login}\PYG{p}{(}\PYG{n}{username}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}\PYG{p}{,} \PYG{n}{password}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}\PYG{p}{):} \PYG{n}{AuthPayload}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Logs out the authenticated user.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{logout}\PYG{p}{:} \PYG{n}{Boolean} \PYG{n+nd}{@authenticated}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Initiates a process to recover forgotten credentials.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{recoverCredentials}\PYG{p}{:} \PYG{n}{Boolean}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Registers a new user account.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{registerAccount}\PYG{p}{(}\PYG{n}{username}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}\PYG{p}{,} \PYG{n}{password}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}\PYG{p}{,}
+		\PYG{n}{roles}\PYG{p}{:} \PYG{p}{[}\PYG{n}{UserRole}\PYG{err}{!}\PYG{p}{]}\PYG{err}{!}\PYG{p}{):} \PYG{n}{User}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Deletes the authenticated user\PYGZsq{}s account.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{deleteAccount}\PYG{p}{(}\PYG{n}{password}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}\PYG{p}{):} \PYG{n}{Boolean} \PYG{n+nd}{@authenticated}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Modifies core settings of the system.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{modifyCoreSettings}\PYG{p}{(}\PYG{n}{password}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}\PYG{p}{,}
+		\PYG{n}{newSettings}\PYG{p}{:} \PYG{p}{[}\PYG{n}{String}\PYG{err}{!}\PYG{p}{]}\PYG{err}{!}\PYG{p}{):} \PYG{n}{Boolean} \PYG{n+nd}{@authenticated}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Modifies secondary settings of the system.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{modifySecondarySettings}\PYG{p}{(}\PYG{n}{newSettings}\PYG{p}{:} \PYG{p}{[}\PYG{n}{String}\PYG{err}{!}\PYG{p}{]}\PYG{err}{!}\PYG{p}{):}
+		\PYG{n}{Boolean} \PYG{n+nd}{@authenticated}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Modifies AI theming settings.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{modifyAITheming}\PYG{p}{(}\PYG{n}{prompt}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}\PYG{p}{):} \PYG{n}{Boolean} \PYG{n+nd}{@authenticated} \PYG{n+nd}{@role}\PYG{p}{(}
+		\PYG{n}{roles}\PYG{p}{:} \PYG{p}{[}\PYG{n}{STUDENT}\PYG{p}{,} \PYG{n}{AI\PYGZus{}SUPERVISOR}\PYG{p}{,} \PYG{n}{TECH\PYGZus{}SUPPORT}\PYG{p}{])}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Adds new roles to the user.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{addUserRoles}\PYG{p}{(}\PYG{n}{newRoles}\PYG{p}{:} \PYG{p}{[}\PYG{n}{UserRole}\PYG{err}{!}\PYG{p}{]}\PYG{err}{!}\PYG{p}{):} \PYG{n}{Boolean} \PYG{n+nd}{@authenticated}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Removes roles from the user.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{removeUserRoles}\PYG{p}{(}\PYG{n}{oldRoles}\PYG{p}{:} \PYG{p}{[}\PYG{n}{UserRole}\PYG{err}{!}\PYG{p}{]}\PYG{err}{!}\PYG{p}{):} \PYG{n}{Boolean} \PYG{n+nd}{@authenticated}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Directive to restrict access to authenticated users.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n}{directive} \PYG{n+nd}{@authenticated} \PYG{n}{on} \PYG{n}{FIELD\PYGZus{}DEFINITION}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Directive to restrict access based on user roles.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n}{directive} \PYG{n+nd}{@role}\PYG{p}{(}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	The roles allowed to access the field or object.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n}{roles}\PYG{p}{:} \PYG{p}{[}\PYG{n}{UserRole}\PYG{err}{!}\PYG{p}{]}\PYG{err}{!}
+	\PYG{p}{)} \PYG{n}{on} \PYG{n}{FIELD\PYGZus{}DEFINITION} \PYG{o}{|} \PYG{n}{OBJECT}
+\end{Verbatim}

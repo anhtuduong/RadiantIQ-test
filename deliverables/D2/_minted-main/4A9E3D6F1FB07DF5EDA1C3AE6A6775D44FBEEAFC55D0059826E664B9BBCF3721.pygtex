@@ -1,0 +1,158 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n}{schema} \PYG{p}{\PYGZob{}}
+		\PYG{n}{query}\PYG{p}{:} \PYG{n}{Query}
+		\PYG{n}{mutation}\PYG{p}{:} \PYG{n}{Mutation}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Root Query for fetching article data.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{Query} \PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		View a specific article by its ID.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{viewArticle}\PYG{p}{(}\PYG{n+nb}{id}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}\PYG{p}{):} \PYG{n}{Article} \PYG{n+nd}{@role}\PYG{p}{(}\PYG{n}{roles}\PYG{p}{:}
+		\PYG{p}{[}\PYG{n}{STUDENT}\PYG{p}{,} \PYG{n}{PROFESSOR}\PYG{p}{,} \PYG{n}{PUBLISHER}\PYG{p}{,} \PYG{n}{DEVELOPER}\PYG{p}{,} \PYG{n}{AI\PYGZus{}SUPERVISOR}\PYG{p}{,}
+		\PYG{n}{TECH\PYGZus{}SUPPORT}\PYG{p}{,} \PYG{n}{COURSE\PYGZus{}SUPERVISOR}\PYG{p}{,} \PYG{n}{SYSTEM\PYGZus{}ADMIN}\PYG{p}{])}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		List all available articles.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{listArticles}\PYG{p}{:} \PYG{p}{[}\PYG{n}{Article}\PYG{p}{]} \PYG{n+nd}{@role}\PYG{p}{(}\PYG{n}{roles}\PYG{p}{:}
+		\PYG{p}{[}\PYG{n}{STUDENT}\PYG{p}{,} \PYG{n}{PROFESSOR}\PYG{p}{,} \PYG{n}{PUBLISHER}\PYG{p}{,} \PYG{n}{DEVELOPER}\PYG{p}{,} \PYG{n}{AI\PYGZus{}SUPERVISOR}\PYG{p}{,}
+		\PYG{n}{TECH\PYGZus{}SUPPORT}\PYG{p}{,} \PYG{n}{COURSE\PYGZus{}SUPERVISOR}\PYG{p}{,} \PYG{n}{SYSTEM\PYGZus{}ADMIN}\PYG{p}{])}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Root Mutation for modifying article data.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{Mutation} \PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Create a new article.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{createArticle}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{:} \PYG{n}{CreateArticleInput}\PYG{err}{!}\PYG{p}{):} \PYG{n}{ArticleResponse} \PYG{n+nd}{@role}\PYG{p}{(}
+		\PYG{n}{roles}\PYG{p}{:} \PYG{p}{[}\PYG{n}{PUBLISHER}\PYG{p}{])}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Modify an existing article.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{modifyArticle}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{:} \PYG{n}{ModifyArticleInput}\PYG{err}{!}\PYG{p}{):} \PYG{n}{ArticleResponse} \PYG{n+nd}{@role}\PYG{p}{(}
+		\PYG{n}{roles}\PYG{p}{:} \PYG{p}{[}\PYG{n}{PUBLISHER}\PYG{p}{,} \PYG{n}{COURSE\PYGZus{}SUPERVISOR}\PYG{p}{,} \PYG{n}{SYSTEM\PYGZus{}ADMIN}\PYG{p}{])}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Delete an article by its ID.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{deleteArticle}\PYG{p}{(}\PYG{n+nb}{id}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}\PYG{p}{):} \PYG{n}{DeleteArticleResponse} \PYG{n+nd}{@role}\PYG{p}{(}\PYG{n}{roles}\PYG{p}{:}
+		\PYG{p}{[}\PYG{n}{PUBLISHER}\PYG{p}{,} \PYG{n}{COURSE\PYGZus{}SUPERVISOR}\PYG{p}{,} \PYG{n}{SYSTEM\PYGZus{}ADMIN}\PYG{p}{])}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Archive an article by its ID.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{archiveArticle}\PYG{p}{(}\PYG{n+nb}{id}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}\PYG{p}{):} \PYG{n}{ArchiveArticleResponse} \PYG{n+nd}{@role}\PYG{p}{(}\PYG{n}{roles}\PYG{p}{:}
+		\PYG{p}{[}\PYG{n}{PUBLISHER}\PYG{p}{,} \PYG{n}{COURSE\PYGZus{}SUPERVISOR}\PYG{p}{,} \PYG{n}{SYSTEM\PYGZus{}ADMIN}\PYG{p}{])}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Add a review to an article.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{reviewArticle}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{:} \PYG{n}{ReviewArticleInput}\PYG{err}{!}\PYG{p}{):} \PYG{n}{ReviewResponse} \PYG{n+nd}{@role}\PYG{p}{(}
+		\PYG{n}{roles}\PYG{p}{:} \PYG{p}{[}\PYG{n}{STUDENT}\PYG{p}{,} \PYG{n}{PROFESSOR}\PYG{p}{])}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Remove a review from an article.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{removeReview}\PYG{p}{(}\PYG{n}{articleId}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}\PYG{p}{,} \PYG{n}{reviewId}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}\PYG{p}{):} \PYG{n}{RemoveReviewResponse}
+		\PYG{n+nd}{@role}\PYG{p}{(}\PYG{n}{roles}\PYG{p}{:} \PYG{p}{[}\PYG{n}{SYSTEM\PYGZus{}ADMIN}\PYG{p}{])}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Input type for creating a new article.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{input} \PYG{n}{CreateArticleInput} \PYG{p}{\PYGZob{}}
+		\PYG{n}{title}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+		\PYG{n}{content}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+		\PYG{n}{authorId}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Input type for modifying an existing article.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{input} \PYG{n}{ModifyArticleInput} \PYG{p}{\PYGZob{}}
+		\PYG{n+nb}{id}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}
+		\PYG{n}{title}\PYG{p}{:} \PYG{n}{String}
+		\PYG{n}{content}\PYG{p}{:} \PYG{n}{String}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Response type for article\PYGZhy{}related mutations.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{ArticleResponse} \PYG{p}{\PYGZob{}}
+		\PYG{n}{success}\PYG{p}{:} \PYG{n}{Boolean}\PYG{err}{!}
+		\PYG{n}{message}\PYG{p}{:} \PYG{n}{String}
+		\PYG{n}{article}\PYG{p}{:} \PYG{n}{Article}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Response type for deleting an article.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{DeleteArticleResponse} \PYG{p}{\PYGZob{}}
+		\PYG{n}{success}\PYG{p}{:} \PYG{n}{Boolean}\PYG{err}{!}
+		\PYG{n}{message}\PYG{p}{:} \PYG{n}{String}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Response type for archiving an article.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{ArchiveArticleResponse} \PYG{p}{\PYGZob{}}
+		\PYG{n}{success}\PYG{p}{:} \PYG{n}{Boolean}\PYG{err}{!}
+		\PYG{n}{message}\PYG{p}{:} \PYG{n}{String}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Input type for adding a review to an article.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{input} \PYG{n}{ReviewArticleInput} \PYG{p}{\PYGZob{}}
+		\PYG{n}{articleId}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}
+		\PYG{n}{review}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+		\PYG{n}{reviewerId}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Response type for review\PYGZhy{}related mutations.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{ReviewResponse} \PYG{p}{\PYGZob{}}
+		\PYG{n}{success}\PYG{p}{:} \PYG{n}{Boolean}\PYG{err}{!}
+		\PYG{n}{message}\PYG{p}{:} \PYG{n}{String}
+		\PYG{n}{review}\PYG{p}{:} \PYG{n}{Review}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Response type for removing a review.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{RemoveReviewResponse} \PYG{p}{\PYGZob{}}
+		\PYG{n}{success}\PYG{p}{:} \PYG{n}{Boolean}\PYG{err}{!}
+		\PYG{n}{message}\PYG{p}{:} \PYG{n}{String}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Representation of an article.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{Article} \PYG{p}{\PYGZob{}}
+		\PYG{n+nb}{id}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}
+		\PYG{n}{title}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+		\PYG{n}{content}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+		\PYG{n}{author}\PYG{p}{:} \PYG{n}{User}\PYG{err}{!}
+		\PYG{n}{createdAt}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+		\PYG{n}{updatedAt}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+		\PYG{n}{reviews}\PYG{p}{:} \PYG{p}{[}\PYG{n}{Review}\PYG{err}{!}\PYG{p}{]}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Representation of a review.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{Review} \PYG{p}{\PYGZob{}}
+		\PYG{n+nb}{id}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}
+		\PYG{n}{content}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+		\PYG{n}{reviewer}\PYG{p}{:} \PYG{n}{User}\PYG{err}{!}
+		\PYG{n}{createdAt}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+	\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

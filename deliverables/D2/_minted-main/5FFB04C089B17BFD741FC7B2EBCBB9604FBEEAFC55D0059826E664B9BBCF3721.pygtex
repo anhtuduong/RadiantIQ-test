@@ -1,0 +1,92 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n}{schema} \PYG{p}{\PYGZob{}}
+		\PYG{n}{query}\PYG{p}{:} \PYG{n}{Query}
+		\PYG{n}{mutation}\PYG{p}{:} \PYG{n}{Mutation}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Root Query for fetching ranking data.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{Query} \PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Get a specific ranking by its ID.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{getRanking}\PYG{p}{(}\PYG{n+nb}{id}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}\PYG{p}{):} \PYG{n}{Ranking} \PYG{n+nd}{@role}\PYG{p}{(}\PYG{n}{roles}\PYG{p}{:}
+		\PYG{p}{[}\PYG{n}{STUDENT}\PYG{p}{,} \PYG{n}{PROFESSOR}\PYG{p}{,} \PYG{n}{COURSE\PYGZus{}SUPERVISOR}\PYG{p}{,} \PYG{n}{SYSTEM\PYGZus{}ADMIN}\PYG{p}{])}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		List all rankings.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{getRankings}\PYG{p}{:} \PYG{p}{[}\PYG{n}{Ranking}\PYG{p}{]} \PYG{n+nd}{@role}\PYG{p}{(}\PYG{n}{roles}\PYG{p}{:}
+		\PYG{p}{[}\PYG{n}{STUDENT}\PYG{p}{,} \PYG{n}{PROFESSOR}\PYG{p}{,} \PYG{n}{COURSE\PYGZus{}SUPERVISOR}\PYG{p}{,} \PYG{n}{SYSTEM\PYGZus{}ADMIN}\PYG{p}{])}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Root Mutation for modifying ranking data.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{Mutation} \PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Add a new ranking.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{addRanking}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{:} \PYG{n}{AddRankingInput}\PYG{err}{!}\PYG{p}{):} \PYG{n}{RankingResponse} \PYG{n+nd}{@role}\PYG{p}{(}\PYG{n}{roles}\PYG{p}{:}
+		\PYG{p}{[}\PYG{n}{SYSTEM\PYGZus{}ADMIN}\PYG{p}{])}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Update an existing ranking.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{updateRanking}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{:} \PYG{n}{UpdateRankingInput}\PYG{err}{!}\PYG{p}{):} \PYG{n}{RankingResponse}
+		\PYG{n+nd}{@role}\PYG{p}{(}\PYG{n}{roles}\PYG{p}{:} \PYG{p}{[}\PYG{n}{SYSTEM\PYGZus{}ADMIN}\PYG{p}{])}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{		Delete a ranking by its ID.}
+\PYG{l+s+sd}{		\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+		\PYG{n}{deleteRanking}\PYG{p}{(}\PYG{n+nb}{id}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}\PYG{p}{):} \PYG{n}{DeleteRankingResponse} \PYG{n+nd}{@role}\PYG{p}{(}\PYG{n}{roles}\PYG{p}{:}
+		\PYG{p}{[}\PYG{n}{SYSTEM\PYGZus{}ADMIN}\PYG{p}{])}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Input type for adding a new ranking.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{input} \PYG{n}{AddRankingInput} \PYG{p}{\PYGZob{}}
+		\PYG{n}{userId}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}
+		\PYG{n}{courseId}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}
+		\PYG{n}{score}\PYG{p}{:} \PYG{n}{Float}\PYG{err}{!}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Input type for updating an existing ranking.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{input} \PYG{n}{UpdateRankingInput} \PYG{p}{\PYGZob{}}
+		\PYG{n+nb}{id}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}
+		\PYG{n}{score}\PYG{p}{:} \PYG{n}{Float}\PYG{err}{!}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Response type for ranking\PYGZhy{}related mutations.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{RankingResponse} \PYG{p}{\PYGZob{}}
+		\PYG{n}{success}\PYG{p}{:} \PYG{n}{Boolean}\PYG{err}{!}
+		\PYG{n}{message}\PYG{p}{:} \PYG{n}{String}
+		\PYG{n}{ranking}\PYG{p}{:} \PYG{n}{Ranking}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Response type for deleting a ranking.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{DeleteRankingResponse} \PYG{p}{\PYGZob{}}
+		\PYG{n}{success}\PYG{p}{:} \PYG{n}{Boolean}\PYG{err}{!}
+		\PYG{n}{message}\PYG{p}{:} \PYG{n}{String}
+	\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	Representation of a ranking.}
+\PYG{l+s+sd}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{n+nb}{type} \PYG{n}{Ranking} \PYG{p}{\PYGZob{}}
+		\PYG{n+nb}{id}\PYG{p}{:} \PYG{n}{ID}\PYG{err}{!}
+		\PYG{n}{user}\PYG{p}{:} \PYG{n}{User}\PYG{err}{!}
+		\PYG{n}{course}\PYG{p}{:} \PYG{n}{Course}\PYG{err}{!}
+		\PYG{n}{score}\PYG{p}{:} \PYG{n}{Float}\PYG{err}{!}
+		\PYG{n}{createdAt}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+		\PYG{n}{updatedAt}\PYG{p}{:} \PYG{n}{String}\PYG{err}{!}
+	\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
