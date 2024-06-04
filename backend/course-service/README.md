@@ -31,6 +31,8 @@ course-service/
 
 ## Develop the service
 
+Note: to develop and test any microservice in standalone mode of RadiantIQ project, you need to run the commands in that service directory.
+
 ### Install dependencies
 
 1. Install `nodejs`: https://nodejs.org/en/download/package-manager/
