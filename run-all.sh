@@ -5,9 +5,9 @@
 
 root_dir=$(pwd)
 
-# Build the template-and-test-microservices image
-template_and_test_microservices_dir="${root_dir}/backend/template-and-test-microservices"
-cd ${template_and_test_microservices_dir}
+# Build the frontend image
+frontend_dir="${root_dir}/frontend"
+cd ${frontend_dir}
 chmod +x build.sh
 ./build.sh
 

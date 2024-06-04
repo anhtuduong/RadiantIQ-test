@@ -8,8 +8,8 @@ root_dir=$(pwd)
 docker compose down
 
 # Remove the template-and-test-microservices image
-template_and_test_microservices_dir="${root_dir}/backend/template-and-test-microservices"
-cd ${template_and_test_microservices_dir}
+frontend_dir="${root_dir}/frontend"
+cd ${frontend_dir}
 chmod +x clean.sh
 ./clean.sh
 
