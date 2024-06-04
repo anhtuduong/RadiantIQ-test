@@ -1,0 +1,15 @@
+FROM node:20
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install -g @angular/cli
+
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "start"]
+
+EXPOSE 4200
